@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Showcase</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fff8ef;
+        color: #333;
+        background: #fff8ef;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 2.5em;
+        color: #2c3e50;
+      }
+      .project-image {
+        width: 40%;
+        height: auto;
+        border-radius: 8px;
+        transition: transform 0.3s;
+        margin-left: 20px;
+      }
+      .project-image:hover {
+        transform: scale(1.05);
+      }
+      .description {
+        line-height: 1.6;
+        width: 60%;
+      }
+      .description p {
+        margin: 10px 0;
+      }
+      .description strong {
+        color: #2980b9;
+      }
+      .download-button,
+      .contact-button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 20px 0;
+        font-size: 1em;
+        color: #fff;
+        background-color: #2980b9;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+      }
+      .contact-section {
+        margin-top: 50px;
+        text-align: center;
+      }
+      .contact-section p {
+        font-size: 1.2em;
+      }
+      .contact-section .contact-button {
+        margin-top: 10px;
+      }
+      .intro-section,
+      .features-section,
+      .reviews-section {
+        max-width: 1200px;
+        margin: 20px auto;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+      .intro-section p,
+      .features-section p,
+      .reviews-section p {
+        margin: 10px 0;
+      }
+      .features-list {
+        list-style-type: disc;
+        padding-left: 20px;
+      }
+      .footer {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 0.9em;
+        color: #777;
+        width: 100%;
+      }
+      @media (max-width: 800px) {
+        .container {
+          flex-direction: column;
+          padding: 15px;
+        }
+        .project-image {
+          width: 100%;
+          margin: 0 0 20px 0;
+        }
+        .description {
+          width: 100%;
+        }
+        .header h1 {
+          font-size: 2em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="intro-section">
+      <div class="header">
+        <h1>Welcome to Our Product Showcase</h1>
+      </div>
+      <p>
+        Discover our latest products and innovations. Our team has worked
+        tirelessly to bring you the best in technology and design. Explore our
+        features, download detailed information, and get in touch with us for
+        any inquiries.
+      </p>
+    </div>
+
+    <div class="container">
+      <img
+        src="/images/minion4.webp"
+        alt="Project Image"
+        class="project-image"
+      />
+      <div>
+        <div class="header">
+          <h1>Product 1</h1>
+        </div>
+        <div class="description">
+          <p><strong>Product Overview:</strong></p>
+          <p>
+            This is a brief overview of the project, explaining what it is about
+            and its main features. You can describe the project’s purpose, the
+            technology stack used, and any notable achievements or results.
+          </p>
+          <p><strong>Product Details:</strong></p>
+          <p>
+            Provide more detailed descriptions about the project here. This can
+            include how the project was developed, the challenges faced, and how
+            they were overcome. You can also discuss the project's impact or
+            potential future improvements.
+          </p>
+          <a href="/path/to/your/file.pdf" class="download-button" download
+            >Download PDF</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="features-section">
+      <h2>Key Features</h2>
+      <ul class="features-list">
+        <li>Feature 1: Description of feature 1.</li>
+        <li>Feature 2: Description of feature 2.</li>
+        <li>Feature 3: Description of feature 3.</li>
+        <li>Feature 4: Description of feature 4.</li>
+        <li>Feature 5: Description of feature 5.</li>
+      </ul>
+    </div>
+
+    <div class="reviews-section">
+      <h2>Customer Reviews</h2>
+      <p>
+        <strong>John Doe:</strong> "This product has changed the way I work.
+        Highly recommend it!"
+      </p>
+      <p>
+        <strong>Jane Smith:</strong> "Exceptional quality and great customer
+        service."
+      </p>
+      <p>
+        <strong>Michael Brown:</strong> "A must-have for anyone in the
+        industry."
+      </p>
+    </div>
+
+    <div class="contact-section">
+      <p>
+        If you have any questions or would like to know more about the product,
+        please don't hesitate to contact us.
+      </p>
+      <a href="tel:+1234567890" class="contact-button">Contact Us</a>
+    </div>
+
+    <footer
+      style="background: #fff8ef"
+      class="container_wrap socket_color"
+      id="socket"
+      role="contentinfo"
+      itemscope="itemscope"
+      itemtype="#"
+    >
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: #d4dbb1;
+        "
+      >
+        <span
+          class="copyright"
+          style="color: #2d3436; font-weight: 800; font-size: 1.2em"
+          >© Infed</span
+        >
+        <nav
+          class="sub_menu_socket"
+          role="navigation"
+          itemscope="itemscope"
+          itemtype="#"
+        >
+          <div class="avia3-menu">
+            <ul id="avia3-menu" class="menu" style="display: flex; gap: 20px">
+              <li
+                role="menuitem"
+                id="menu-item-290"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-1"
+              >
+                <a
+                  href="#"
+                  itemprop="url"
+                  tabindex="0"
+                  style="text-decoration: none"
+                >
+                  <span
+                    class="avia-menu-text"
+                    style="color: #2d3436; font-weight: 900"
+                    >Home</span
+                  >
+                </a>
+              </li>
+              <li
+                role="menuitem"
+                id="menu-item-289"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-2"
+              >
+                <a
+                  href="#"
+                  itemprop="url"
+                  tabindex="0"
+                  style="text-decoration: none"
+                >
+                  <span
+                    class="avia-menu-text"
+                    style="color: #2d3436; font-weight: 900"
+                    >About</span
+                  >
+                </a>
+              </li>
+              <li
+                role="menuitem"
+                id="menu-item-291"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-top-level menu-item-top-level-3"
+              >
+                <a
+                  href="#"
+                  itemprop="url"
+                  tabindex="0"
+                  style="text-decoration: none"
+                >
+                  <span
+                    class="avia-menu-text"
+                    style="color: #2d3436; font-weight: 900"
+                    >Contact</span
+                  >
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
