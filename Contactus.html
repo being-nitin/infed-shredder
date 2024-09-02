@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: #fff8ef;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        width: 80%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem;
+      }
+
+      .contact-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .contact-section h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #222;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+
+      .contact-section p {
+        font-size: 1.25rem;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        max-width: 800px;
+        color: #555;
+      }
+
+      .contact-form {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+
+      .contact-form button {
+        background-color: #4caf50;
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .contact-form button:hover {
+        background-color: #45a049;
+      }
+
+      footer {
+        background: #d4dbb1;
+        color: #fff8ef;
+        padding: 2rem 0;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+
+      .footer-content span {
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      .footer-nav {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .footer-nav a {
+        text-decoration: none;
+        color: #fff8ef;
+        font-size: 1.2rem;
+        font-weight: 700;
+        transition: color 0.3s ease-in-out;
+      }
+
+      .footer-nav a:hover {
+        color: #fff8ef;
+      }
+
+      @media (max-width: 768px) {
+        .contact-section h1 {
+          font-size: 2.5rem;
+        }
+
+        .contact-section p {
+          font-size: 1.1rem;
+        }
+
+        .footer-content {
+          flex-direction: column;
+        }
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      function sendMessage(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get form data
+        const name = encodeURIComponent(document.getElementById("name").value);
+        const email = encodeURIComponent(
+          document.getElementById("email").value
+        );
+        const enquiry = encodeURIComponent(
+          document.getElementById("enquiry").value
+        );
+
+        // WhatsApp number (replace with your number)
+        const whatsappNumber = "+919532063962";
+        const message = `Name: ${name}%0AEmail: ${email}%0AEnquiry: ${enquiry}`;
+
+        // Construct WhatsApp URL
+        const whatsappURL = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${message}`;
+
+        // Open WhatsApp URL
+        window.open(whatsappURL, "_blank");
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="contact-section">
+        <h1>Contact Us</h1>
+        <p>
+          Have any questions or need further information? Feel free to reach out
+          to us. We'll get back to you as soon as possible.
+        </p>
+        <form class="contact-form" onsubmit="sendMessage(event)">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email"
+            required
+          />
+          <textarea
+            id="enquiry"
+            name="enquiry"
+            rows="5"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+    <footer
+      style="background-color: #d4dbb1"
+      class="container_wrap socket_color"
+      id="socket"
+      role="contentinfo"
+      itemscope="itemscope"
+      itemtype="#"
+      style="
+        background: linear-gradient(to right, #f1f2f6, #dfe4ea);
+        padding: 20px 0;
+      "
+    >
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <span
+          class="copyright"
+          style="color: #2d3436; font-weight: 800; font-size: 1.2em"
+          >© Infed</span
+        >
+        <nav
+          class="sub_menu_socket"
+          role="navigation"
+          itemscope="itemscope"
+          itemtype="#"
+        >
+          <div class="avia3-menu">
+            <ul id="avia3-menu" class="menu" style="display: flex; gap: 20px">
+              <li
+                role="menuitem"
+                id="menu-item-290"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-1"
+              >
+                <a
+                  href="#"
+                  itemprop="url"
+                  tabindex="0"
+                  style="text-decoration: none"
+                >
+                  <span
+                    class="avia-menu-text"
+                    style="color: #2d3436; font-weight: 900"
+                    >Home</span
+                  >
+                </a>
+              </li>
+              <li
+                role="menuitem"
+                id="menu-item-289"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-2"
+              >
+                <a
+                  href="#"
+                  itemprop="url"
+                  tabindex="0"
+                  style="text-decoration: none"
+                >
+                  <span
+                    class="avia-menu-text"
+                    style="color: #2d3436; font-weight: 900"
+                    >About</span
+                  >
+                </a>
+              </li>
+              <li
+                role="menuitem"
+                id="menu-item-291"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-top-level menu-item-top-level-3"
+              >
+                <a
+                  href="#"
+                  itemprop="url"
+                  tabindex="0"
+                  style="text-decoration: none"
+                >
+                  <span
+                    class="avia-menu-text"
+                    style="color: #2d3436; font-weight: 900"
+                    >Contact</span
+                  >
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
