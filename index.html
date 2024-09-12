@@ -3219,29 +3219,28 @@ zum Schutz der Umwelt.</a></p>
     
     <style>
        
-#carouselExampleIndicators{
+       #carouselExampleIndicators {
     margin-top: 100px;
 }
 
-
-
 .custom-carousel {
-    margin-top: 50px; /* Adjust margin-top to ensure navbar looks fine */
-    max-width: 70%; /* Limit the width of the carousel */
+    margin-top: 50px;
+    max-width: 70%;
     margin-left: auto;
-    margin-right: auto; /* Center the carousel */
-    border-radius: 10px; /* Optional: Add rounded corners for a more refined look */
-    overflow: hidden; /* Ensure content stays within the carousel */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
-    height: 500px; /* Increase height to make the content larger */
+    margin-right: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    height: 500px;
+    transition: height 0.3s ease; /* Smooth transition for height adjustments */
 }
 
 .custom-carousel .carousel-inner {
-    height: 100%; /* Make sure the inner content takes full height */
+    height: 100%;
 }
 
 .custom-carousel .carousel-item {
-    height: 100%; /* Ensure each carousel item takes up full height */
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3250,18 +3249,44 @@ zum Schutz der Umwelt.</a></p>
 .custom-carousel img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the image covers the entire area without distortion */
+    object-fit: cover;
 }
 
+/* Change the indicator color and shape */
 .carousel-indicators li {
-    background-color: #000; /* Change indicator color */
-    border-radius: 50%; /* Make indicators circular */
+    background-color: #000;
+    border-radius: 50%;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    filter: invert(100%); /* Make the controls white */
+    filter: invert(100%);
 }
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+    .custom-carousel {
+        max-width: 90%; /* Wider carousel for smaller screens */
+        height: 350px; /* Reduce height for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .custom-carousel {
+        max-width: 100%; /* Full width on very small screens */
+        height: 250px; /* Further reduce height */
+        margin-top: 20px; /* Reduce margin for better fit */
+    }
+
+    .custom-carousel img {
+        object-fit: contain; /* Ensure full visibility of image content on smaller screens */
+    }
+
+    #carouselExampleIndicators {
+        margin-top: 50px; /* Adjust top margin */
+    }
+}
+
     </style>
     
     
@@ -3447,10 +3472,31 @@ zum Schutz der Umwelt.</a></p>
 
 
 
-    <div class="centered-image-container" style="justify-content: center; text-align: center; background-color: #fff8ef
-;">
-        <img src="images/top-products.jpg" alt="Top Products"/>
+    <div class="centered-image-container">
+        <img src="images/top-products.jpg" alt="Top Products" class="centered-image">
     </div>
+
+    <style>
+        /* Remove previous styling */
+.centered-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make the container take up the full viewport height */
+    background-color: #fff8ef; /* Optional: Adjust the background color */
+}
+
+.centered-image {
+    max-width: 100%; /* Ensure the image doesn't exceed the screen width */
+    max-height: 100%; /* Ensure the image doesn't exceed the screen height */
+    object-fit: contain; /* Ensure the image maintains its aspect ratio and fits within the container */
+}
+
+    </style>
+
+
+
+    
     <div style="background-color:#fff8ef;" id='teaserboxen' class='avia-section av-c7ia-f877695aca82061bdba63c512ba73610 main_color avia-section-default avia-no-border-styling avia-bg-style-scroll container_wrap fullsize'>
         <div class='container av-section-cont-open'>
             <div class='template-page content av-content-full alpha units'>
@@ -3511,6 +3557,31 @@ zum Schutz der Umwelt.</a></p>
     </div>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&family=Lato:wght@400;700&display=swap');
+        /* Keeping the original container style intact */
+
+        .av-special-heading h2 {
+    font-family: 'Merriweather', serif; /* Professional serif font */
+    font-size: 36px;
+    color: #2c3e50; /* Dark, professional color */
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    background: #fff8ef;
+    padding: 10px;
+}
+
+/* Improved Styling for Paragraphs */
+.avia_textblock p {
+    font-family: 'Roboto', sans-serif; /* Clean, modern sans-serif font */
+    font-size: 18px;
+    color: #444; /* Softer dark color for easy reading */
+    line-height: 1.8;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
         .avia-image-container img {
             width: 100%;
             height: auto;
@@ -3586,6 +3657,7 @@ zum Schutz der Umwelt.</a></p>
                 height: 400px;
             }
         }
+
     </style>
 
 

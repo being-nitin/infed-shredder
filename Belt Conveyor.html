@@ -11,12 +11,12 @@
         padding: 0;
         background-color: #fff8ef;
         color: #333;
-        background: #fff8ef;
       }
+
       .container {
         max-width: 1200px;
         margin: 50px auto;
-        background: #fff;
+        background-color: #fff;
         padding: 20px;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         border-radius: 8px;
@@ -25,15 +25,18 @@
         flex-direction: row-reverse;
         align-items: center;
       }
+
       .header {
         text-align: center;
         margin-bottom: 20px;
       }
+
       .header h1 {
         margin: 0;
         font-size: 2.5em;
         color: #2c3e50;
       }
+
       .project-image {
         width: 40%;
         height: auto;
@@ -41,19 +44,24 @@
         transition: transform 0.3s;
         margin-left: 20px;
       }
+
       .project-image:hover {
         transform: scale(1.05);
       }
+
       .description {
         line-height: 1.6;
         width: 60%;
       }
+
       .description p {
         margin: 10px 0;
       }
+
       .description strong {
         color: #2980b9;
       }
+
       .download-button,
       .contact-button {
         display: inline-block;
@@ -68,35 +76,36 @@
         text-align: center;
         text-decoration: none;
       }
+
       .contact-section {
         margin-top: 50px;
         text-align: center;
       }
+
       .contact-section p {
         font-size: 1.2em;
       }
+
       .contact-section .contact-button {
         margin-top: 10px;
       }
+
       .intro-section,
       .features-section,
       .reviews-section {
         max-width: 1200px;
         margin: 20px auto;
-        background: #fff;
+        background-color: #fff;
         padding: 20px;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
       }
-      .intro-section p,
-      .features-section p,
-      .reviews-section p {
-        margin: 10px 0;
-      }
+
       .features-list {
         list-style-type: disc;
         padding-left: 20px;
       }
+
       .footer {
         text-align: center;
         margin-top: 30px;
@@ -104,18 +113,22 @@
         color: #777;
         width: 100%;
       }
+
       @media (max-width: 800px) {
         .container {
           flex-direction: column;
           padding: 15px;
         }
+
         .project-image {
           width: 100%;
           margin: 0 0 20px 0;
         }
+
         .description {
           width: 100%;
         }
+
         .header h1 {
           font-size: 2em;
         }
@@ -126,70 +139,52 @@
     <div class="intro-section">
       <div class="header">
         <h1>Belt Conveyor</h1>
-        <img style="width:70%;margin: 10%;" src="/images/" alt="Crusher Logo" />
+        <img
+          style="width: 70%; margin: 10%"
+          src="/images/"
+          alt="Belt Conveyor Logo"
+        />
         <h3>Product Overview:</h3>
       </div>
       <p>
-        A belt conveyor is a mechanical device used for transporting bulk materials, packages, or products from one point to another along a continuous loop of a belt. It is commonly used in various industries for material handling due to its simplicity, efficiency, and versatility.
+        A belt conveyor is a mechanical device used for transporting bulk
+        materials, packages, or products from one point to another along a
+        continuous loop of a belt. It is commonly used in various industries for
+        material handling due to its simplicity, efficiency, and versatility.
       </p>
     </div>
 
     <div class="container">
       <img
         src="/images/beltconveyer.jpg"
-        alt="Project Image"
+        alt="Belt Conveyor Image"
         class="project-image"
       />
       <div>
-        <!-- <div class="header">
-          <h1>Key Features</h1>
-        </div>
         <div class="description">
-          <ol>
-            <li>High Efficiency:</li>
-            <p>
-              Designed to maximize moisture removal, ensuring high solid content
-              in the output.
-            </p>
-            <li>Durable Construction:</li>
-            <p>
-              Made with high-quality materials to withstand harsh operating
-              conditions.
-            </p>
-            <li>Energy Efficient:</li>
-            <p>
-              Optimized for low energy consumption without compromising
-              performance.
-            </p>
-            <li>User-Friendly Operation</li>
-            <p>Intuitive controls and easy-to-maintain design</p>
-            <li>Low Noise and Vibration</li>
-            <p>
-              Operates quietly and with minimal vibration, enhancing the work
-              environment.
-            </p>
-            <li>Versatile Applications:</li>
-            <p>
-              Suitable for dewatering various materials, including sludge, pulp,
-              and food waste.
-            </p>
-          </ol> -->
           <p><strong>Specification:</strong></p>
           <ul>
             <li>
-              <strong>	Belt Width: </strong>Typically ranges from 300 mm to 2000 mm, depending on the application and material size.
+              <strong>Belt Width:</strong> Typically ranges from 300 mm to 2000
+              mm, depending on the application and material size.
             </li>
             <li>
-              <strong>	Belt Length: </strong> Can be customized to various lengths, generally from a few meters to over 100 meters.
+              <strong>Belt Length:</strong> Can be customized to various
+              lengths, generally from a few meters to over 100 meters.
             </li>
             <li>
-              <strong>Belt Material:</strong>
-              Options include PVC, rubber, fabric, and metal, depending on the type of material being conveyed.
+              <strong>Belt Material:</strong> Options include PVC, rubber,
+              fabric, and metal, depending on the type of material being
+              conveyed.
             </li>
-            <li><strong>Capacity: </strong> Varies based on belt width, speed, and material type, typically ranging from a few tons per hour to several hundred tons per hour.</li>
+            <li>
+              <strong>Capacity:</strong> Varies based on belt width, speed, and
+              material type, typically ranging from a few tons per hour to
+              several hundred tons per hour.
+            </li>
           </ul>
-          <a href="/path/to/your/file.pdf" class="download-button" download
-            >Download PDF</a
+          <a href="/path/to/your/file.pdf" class="download-button" download>
+            Download PDF</a
           >
         </div>
       </div>
@@ -198,17 +193,30 @@
     <div class="features-section">
       <h2>Key Features</h2>
       <ul class="features-list">
-        <li><strong>High Efficiency:</strong>  Designed to maximize moisture removal, ensuring high solid content
-          in the output.</li>
-        <li><strong>Durable Construction:</strong>  Made with high-quality materials to withstand harsh operating
-          conditions.</li>
-        <li><strong>Energy Efficient:</strong>  Optimized for low energy consumption without compromising
-          performance.</li>
-        <li><strong>User-Friendly Operation:</strong>Intuitive controls and easy-to-maintain design.</li>
-        <li><strong>Low Noise and Vibration:</strong>Operates quietly and with minimal vibration, enhancing the work
-          environment.</li>
-          <li><strong>Versatile Applications:</strong>Suitable for dewatering various materials, including sludge, pulp,
-            and food waste.</li>
+        <li>
+          <strong>High Efficiency:</strong> Designed to maximize moisture
+          removal, ensuring high solid content in the output.
+        </li>
+        <li>
+          <strong>Durable Construction:</strong> Made with high-quality
+          materials to withstand harsh operating conditions.
+        </li>
+        <li>
+          <strong>Energy Efficient:</strong> Optimized for low energy
+          consumption without compromising performance.
+        </li>
+        <li>
+          <strong>User-Friendly Operation:</strong> Intuitive controls and
+          easy-to-maintain design.
+        </li>
+        <li>
+          <strong>Low Noise and Vibration:</strong> Operates quietly and with
+          minimal vibration, enhancing the work environment.
+        </li>
+        <li>
+          <strong>Versatile Applications:</strong> Suitable for dewatering
+          various materials, including sludge, pulp, and food waste.
+        </li>
       </ul>
     </div>
 
@@ -223,8 +231,7 @@
         service."
       </p>
       <p>
-        <strong>Rohit Pandey:</strong> "A must-have for anyone in the
-        industry."
+        <strong>Rohit Pandey:</strong> "A must-have for anyone in the industry."
       </p>
     </div>
 
@@ -236,14 +243,7 @@
       <a href="tel:+1234567890" class="contact-button">Contact Us</a>
     </div>
 
-    <footer
-      style="background: #fff8ef"
-      class="container_wrap socket_color"
-      id="socket"
-      role="contentinfo"
-      itemscope="itemscope"
-      itemtype="#"
-    >
+    <footer class="container_wrap socket_color" role="contentinfo">
       <div
         class="container"
         style="
@@ -253,72 +253,26 @@
           background-color: #d4dbb1;
         "
       >
-        <span
-          class="copyright"
-          style="color: #2d3436; font-weight: 800; font-size: 1.2em"
-          >© Infed</span
+        <span style="color: #2d3436; font-weight: 800; font-size: 1.2em">
+          © Infed</span
         >
-        <nav
-          class="sub_menu_socket"
-          role="navigation"
-          itemscope="itemscope"
-          itemtype="#"
-        >
+        <nav class="sub_menu_socket" role="navigation">
           <div class="avia3-menu">
             <ul id="avia3-menu" class="menu" style="display: flex; gap: 20px">
-              <li
-                role="menuitem"
-                id="menu-item-290"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-1"
-              >
-                <a
-                  href="#"
-                  itemprop="url"
-                  tabindex="0"
-                  style="text-decoration: none"
+              <li>
+                <a href="#" style="text-decoration: none; color: #2d3436"
+                  >Home</a
                 >
-                  <span
-                    class="avia-menu-text"
-                    style="color: #2d3436; font-weight: 900"
-                    >Home</span
-                  >
-                </a>
               </li>
-              <li
-                role="menuitem"
-                id="menu-item-289"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-2"
-              >
-                <a
-                  href="#"
-                  itemprop="url"
-                  tabindex="0"
-                  style="text-decoration: none"
+              <li>
+                <a href="#" style="text-decoration: none; color: #2d3436"
+                  >About</a
                 >
-                  <span
-                    class="avia-menu-text"
-                    style="color: #2d3436; font-weight: 900"
-                    >About</span
-                  >
-                </a>
               </li>
-              <li
-                role="menuitem"
-                id="menu-item-291"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-top-level menu-item-top-level-3"
-              >
-                <a
-                  href="#"
-                  itemprop="url"
-                  tabindex="0"
-                  style="text-decoration: none"
+              <li>
+                <a href="#" style="text-decoration: none; color: #2d3436"
+                  >Contact</a
                 >
-                  <span
-                    class="avia-menu-text"
-                    style="color: #2d3436; font-weight: 900"
-                    >Contact</span
-                  >
-                </a>
               </li>
             </ul>
           </div>

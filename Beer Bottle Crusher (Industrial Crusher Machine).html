@@ -6,13 +6,13 @@
     <title>Beer Bottle Crusher (Industrial Crusher Machine)</title>
     <style>
       body {
-        font-family: "Arial", sans-serif;
+        font-family: "Montserrat", sans-serif;
         margin: 0;
         padding: 0;
         background-color: #fff8ef;
         color: #333;
-        background: #fff8ef;
       }
+
       .container {
         max-width: 1200px;
         margin: 50px auto;
@@ -25,15 +25,18 @@
         flex-direction: row-reverse;
         align-items: center;
       }
+
       .header {
         text-align: center;
         margin-bottom: 20px;
       }
+
       .header h1 {
         margin: 0;
-        font-size: 2.5em;
+        font-size: 3em;
         color: #2c3e50;
       }
+
       .project-image {
         width: 40%;
         height: auto;
@@ -41,25 +44,28 @@
         transition: transform 0.3s;
         margin-left: 20px;
       }
+
       .project-image:hover {
-        transform: scale(1.05);
+        transform: scale(1.08);
       }
+
       .description {
-        line-height: 1.6;
+        line-height: 1.8;
         width: 60%;
+        font-size: 1.2em;
+        color: #555;
       }
-      .description p {
-        margin: 10px 0;
-      }
+
       .description strong {
         color: #2980b9;
       }
+
       .download-button,
       .contact-button {
         display: inline-block;
         padding: 10px 20px;
         margin: 20px 0;
-        font-size: 1em;
+        font-size: 1.2em;
         color: #fff;
         background-color: #2980b9;
         border: none;
@@ -67,17 +73,27 @@
         cursor: pointer;
         text-align: center;
         text-decoration: none;
+        transition: background-color 0.3s ease-in-out;
       }
+
+      .download-button:hover,
+      .contact-button:hover {
+        background-color: #3498db;
+      }
+
       .contact-section {
         margin-top: 50px;
         text-align: center;
       }
+
       .contact-section p {
         font-size: 1.2em;
       }
+
       .contact-section .contact-button {
         margin-top: 10px;
       }
+
       .intro-section,
       .features-section,
       .reviews-section {
@@ -88,50 +104,64 @@
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
       }
-      .intro-section p,
-      .features-section p,
-      .reviews-section p {
-        margin: 10px 0;
-      }
+
       .features-list {
         list-style-type: disc;
         padding-left: 20px;
       }
+
       .footer {
         text-align: center;
         margin-top: 30px;
         font-size: 0.9em;
         color: #d4dbb1;
         width: 100%;
+        background: #d4dbb1;
+        padding: 20px 0;
       }
+
       @media (max-width: 800px) {
         .container {
           flex-direction: column;
           padding: 15px;
         }
+
         .project-image {
           width: 100%;
           margin: 0 0 20px 0;
         }
+
         .description {
           width: 100%;
         }
+
         .header h1 {
-          font-size: 2em;
+          font-size: 2.5em;
         }
       }
     </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="intro-section">
       <div class="header">
         <h1>Beer Bottle Crusher (Industrial Crusher Machine)</h1>
-        <img style="width:70%;margin: 10%;" src="/images/6.png" alt="Crusher Logo" />
-
+        <img
+          style="width: 70%; margin: 10%"
+          src="/images/6.png"
+          alt="Crusher Logo"
+        />
         <h3>Product Overview:</h3>
       </div>
       <p>
-        A beer bottle crusher machine is designed to efficiently crush and recycle glass bottles, specifically beer bottles. This equipment helps in managing waste by reducing the volume of glass bottles, making them easier to handle and process. It's commonly used in bars, restaurants, breweries, and recycling facilities.
+        A beer bottle crusher machine is designed to efficiently crush and
+        recycle glass bottles, specifically beer bottles. This equipment helps
+        in managing waste by reducing the volume of glass bottles, making them
+        easier to handle and process. It's commonly used in bars, restaurants,
+        breweries, and recycling facilities.
       </p>
     </div>
 
@@ -141,71 +171,62 @@
         alt="Project Image"
         class="project-image"
       />
-      <div>
-        <!-- <div class="header">
-          <h1>Key Features</h1>
-        </div>
-        <div class="description">
-          <ol>
-            <li>High Efficiency:</li>
-            <p>
-              Designed to maximize moisture removal, ensuring high solid content
-              in the output.
-            </p>
-            <li>Durable Construction:</li>
-            <p>
-              Made with high-quality materials to withstand harsh operating
-              conditions.
-            </p>
-            <li>Energy Efficient:</li>
-            <p>
-              Optimized for low energy consumption without compromising
-              performance.
-            </p>
-            <li>User-Friendly Operation</li>
-            <p>Intuitive controls and easy-to-maintain design</p>
-            <li>Low Noise and Vibration</li>
-            <p>
-              Operates quietly and with minimal vibration, enhancing the work
-              environment.
-            </p>
-            <li>Versatile Applications:</li>
-            <p>
-              Suitable for dewatering various materials, including sludge, pulp,
-              and food waste.
-            </p>
-          </ol> -->
-          <p><strong>Specification:</strong></p>
-          <ul>
-            <li>
-              <strong>Motor Power: </strong>Ranges from 1 kW to 5 kW depending
-              on the model and capacity.
-            </li>
-            <li>
-              <strong>Crushing Capacity:</strong> Can handle up to 1000 kg/hr of glass bottles.
-            </li>
-            <li>
-              <strong>Dimensions:</strong>
-              Typically around 1000 mm x 800 mm x 1500 mm.
-            </li>
-            <li><strong>Weight:</strong> Approximately 300 kg</li>
-          </ul>
-          <a href="/path/to/your/file.pdf" class="download-button" download
-            >Download PDF</a
-          >
-        </div>
+      <div class="description">
+        <p><strong>Specification:</strong></p>
+        <ul>
+          <li>
+            <strong>Motor Power:</strong> Ranges from 1 kW to 5 kW depending on
+            the model and capacity.
+          </li>
+          <li>
+            <strong>Crushing Capacity:</strong> Can handle up to 1000 kg/hr of
+            glass bottles.
+          </li>
+          <li>
+            <strong>Dimensions:</strong> Typically around 1000 mm x 800 mm x
+            1500 mm.
+          </li>
+          <li><strong>Weight:</strong> Approximately 300 kg.</li>
+        </ul>
+        <a href="/path/to/your/file.pdf" class="download-button" download
+          >Download PDF</a
+        >
       </div>
     </div>
 
     <div class="features-section">
       <h2>Key Features</h2>
       <ul class="features-list">
-        <li><strong>Heavy-Duty Construction:</strong> Made with robust, high-strength materials to withstand the impact of crushing glass bottles and ensure durability.</li>
-        <li><strong>High Efficiency:</strong>	Capable of crushing large quantities of beer bottles quickly and effectively, reducing them to manageable pieces.</li>
-        <li><strong>Powerful Crushing Mechanism:</strong> Equipped with strong motors and heavy-duty crushing blades or hammers designed to handle glass bottles.</li>
-        <li><strong>Compact Size:</strong>Typically designed to be compact and space-efficient, making it suitable for use in commercial and industrial settings.</li>
-        <li><strong>Safety Features:</strong>o	Includes safety mechanisms such as safety guards, emergency stop buttons, and overload protection to ensure safe operation.</li>
-          <li><strong>Low Noise Operation:</strong>	Designed to operate with minimal noise, making it suitable for environments where noise levels need to be controlled.</li>
+        <li>
+          <strong>Heavy-Duty Construction:</strong> Made with robust,
+          high-strength materials to withstand the impact of crushing glass
+          bottles and ensure durability.
+        </li>
+        <li>
+          <strong>High Efficiency:</strong> Capable of crushing large quantities
+          of beer bottles quickly and effectively, reducing them to manageable
+          pieces.
+        </li>
+        <li>
+          <strong>Powerful Crushing Mechanism:</strong> Equipped with strong
+          motors and heavy-duty crushing blades or hammers designed to handle
+          glass bottles.
+        </li>
+        <li>
+          <strong>Compact Size:</strong> Typically designed to be compact and
+          space-efficient, making it suitable for use in commercial and
+          industrial settings.
+        </li>
+        <li>
+          <strong>Safety Features:</strong> Includes safety mechanisms such as
+          safety guards, emergency stop buttons, and overload protection to
+          ensure safe operation.
+        </li>
+        <li>
+          <strong>Low Noise Operation:</strong> Designed to operate with minimal
+          noise, making it suitable for environments where noise levels need to
+          be controlled.
+        </li>
       </ul>
     </div>
 
@@ -220,8 +241,7 @@
         service."
       </p>
       <p>
-        <strong>Rohit Pandey:</strong> "A must-have for anyone in the
-        industry."
+        <strong>Rohit Pandey:</strong> "A must-have for anyone in the industry."
       </p>
     </div>
 
@@ -233,22 +253,13 @@
       <a href="tel:+1234567890" class="contact-button">Contact Us</a>
     </div>
 
-    <footer
-      style="background: #fff8ef
- "
-      class="container_wrap socket_color"
-      id="socket"
-      role="contentinfo"
-      itemscope="itemscope"
-      itemtype="#"
-    >
+    <footer class="footer">
       <div
         class="container"
         style="
           display: flex;
           justify-content: space-between;
           align-items: center;
-          background-color: #d4dbb1;
         "
       >
         <span
@@ -256,70 +267,36 @@
           style="color: #2d3436; font-weight: 800; font-size: 1.2em"
           >© Infed</span
         >
-        <nav
-          class="sub_menu_socket"
-          role="navigation"
-          itemscope="itemscope"
-          itemtype="#"
-        >
-          <div class="avia3-menu">
-            <ul id="avia3-menu" class="menu" style="display: flex; gap: 20px">
-              <li
-                role="menuitem"
-                id="menu-item-290"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-1"
-              >
-                <a
-                  href="#"
-                  itemprop="url"
-                  tabindex="0"
-                  style="text-decoration: none"
+        <nav class="sub_menu_socket" role="navigation">
+          <ul id="avia3-menu" class="menu" style="display: flex; gap: 20px">
+            <li>
+              <a href="#" style="text-decoration: none">
+                <span
+                  class="avia-menu-text"
+                  style="color: #2d3436; font-weight: 900"
+                  >Home</span
                 >
-                  <span
-                    class="avia-menu-text"
-                    style="color: #2d3436; font-weight: 900"
-                    >Home</span
-                  >
-                </a>
-              </li>
-              <li
-                role="menuitem"
-                id="menu-item-289"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-2"
-              >
-                <a
-                  href="#"
-                  itemprop="url"
-                  tabindex="0"
-                  style="text-decoration: none"
+              </a>
+            </li>
+            <li>
+              <a href="#" style="text-decoration: none">
+                <span
+                  class="avia-menu-text"
+                  style="color: #2d3436; font-weight: 900"
+                  >About</span
                 >
-                  <span
-                    class="avia-menu-text"
-                    style="color: #2d3436; font-weight: 900"
-                    >About</span
-                  >
-                </a>
-              </li>
-              <li
-                role="menuitem"
-                id="menu-item-291"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-top-level menu-item-top-level-3"
-              >
-                <a
-                  href="#"
-                  itemprop="url"
-                  tabindex="0"
-                  style="text-decoration: none"
+              </a>
+            </li>
+            <li>
+              <a href="#" style="text-decoration: none">
+                <span
+                  class="avia-menu-text"
+                  style="color: #2d3436; font-weight: 900"
+                  >Contact</span
                 >
-                  <span
-                    class="avia-menu-text"
-                    style="color: #2d3436; font-weight: 900"
-                    >Contact</span
-                  >
-                </a>
-              </li>
-            </ul>
-          </div>
+              </a>
+            </li>
+          </ul>
         </nav>
       </div>
     </footer>

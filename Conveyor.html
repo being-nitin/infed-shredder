@@ -6,12 +6,11 @@
     <title>Conveyor</title>
     <style>
       body {
-        font-family: "Arial", sans-serif;
+        font-family: "Montserrat", sans-serif;
         margin: 0;
         padding: 0;
         background-color: #fff8ef;
         color: #333;
-        background: #fff8ef;
       }
       .container {
         max-width: 1200px;
@@ -33,6 +32,14 @@
         margin: 0;
         font-size: 2.5em;
         color: #2c3e50;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+      .header img {
+        width: 70%;
+        margin: 10%;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       }
       .project-image {
         width: 40%;
@@ -67,6 +74,11 @@
         cursor: pointer;
         text-align: center;
         text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+      .download-button:hover,
+      .contact-button:hover {
+        background-color: #1c6ea4;
       }
       .contact-section {
         margin-top: 50px;
@@ -74,9 +86,6 @@
       }
       .contact-section p {
         font-size: 1.2em;
-      }
-      .contact-section .contact-button {
-        margin-top: 10px;
       }
       .intro-section,
       .features-section,
@@ -119,6 +128,10 @@
         .header h1 {
           font-size: 2em;
         }
+        .header img {
+          width: 100%;
+          margin: 0;
+        }
       }
     </style>
   </head>
@@ -126,11 +139,15 @@
     <div class="intro-section">
       <div class="header">
         <h1>Conveyor</h1>
-        <img style="width:70%;margin: 10%;"  src="/images/15.png" alt="Crusher Logo" />
+        <img src="/images/15.png" alt="Conveyor Image" />
         <h3>Product Overview:</h3>
       </div>
       <p>
-        A screw conveyor, also known as an auger conveyor, is a mechanical device used to transport bulk materials in various industries. It utilizes a rotating helical screw blade (or auger) to move materials along a trough or tube, making it ideal for handling powders, granules, and small particles.
+        A screw conveyor, also known as an auger conveyor, is a mechanical
+        device used to transport bulk materials in various industries. It
+        utilizes a rotating helical screw blade (or auger) to move materials
+        along a trough or tube, making it ideal for handling powders, granules,
+        and small particles.
       </p>
     </div>
 
@@ -141,70 +158,62 @@
         class="project-image"
       />
       <div>
-        <!-- <div class="header">
-          <h1>Key Features</h1>
-        </div>
-        <div class="description">
-          <ol>
-            <li>High Efficiency:</li>
-            <p>
-              Designed to maximize moisture removal, ensuring high solid content
-              in the output.
-            </p>
-            <li>Durable Construction:</li>
-            <p>
-              Made with high-quality materials to withstand harsh operating
-              conditions.
-            </p>
-            <li>Energy Efficient:</li>
-            <p>
-              Optimized for low energy consumption without compromising
-              performance.
-            </p>
-            <li>User-Friendly Operation</li>
-            <p>Intuitive controls and easy-to-maintain design</p>
-            <li>Low Noise and Vibration</li>
-            <p>
-              Operates quietly and with minimal vibration, enhancing the work
-              environment.
-            </p>
-            <li>Versatile Applications:</li>
-            <p>
-              Suitable for dewatering various materials, including sludge, pulp,
-              and food waste.
-            </p>
-          </ol> -->
-          <p><strong>Specification:</strong></p>
-          <ul>
-            <li>
-              <strong>Screw Diameter:  </strong>Typically ranges from 100 mm to 1000 mm, depending on the model and application.
-            </li>
-            <li>
-              <strong>Conveyor Length: </strong> Can be customized to various lengths, generally from 1 meter to over 10 meters.
-            </li>
-            <li>
-              <strong>Capacity:</strong>
-              Varies based on screw diameter and speed, typically ranging from 0.1 to 100 cubic meters per hour.
-            </li>
-            <li><strong>	Material Construction: </strong>Often made from stainless steel, carbon steel, or other durable materials based on the application.</li>
-          </ul>
-          <a href="/path/to/your/file.pdf" class="download-button" download
-            >Download PDF</a
-          >
-        </div>
+        <p><strong>Specification:</strong></p>
+        <ul>
+          <li>
+            <strong>Screw Diameter:</strong> Typically ranges from 100 mm to
+            1000 mm, depending on the model and application.
+          </li>
+          <li>
+            <strong>Conveyor Length:</strong> Can be customized to various
+            lengths, generally from 1 meter to over 10 meters.
+          </li>
+          <li>
+            <strong>Capacity:</strong> Varies based on screw diameter and speed,
+            typically ranging from 0.1 to 100 cubic meters per hour.
+          </li>
+          <li>
+            <strong>Material Construction:</strong> Often made from stainless
+            steel, carbon steel, or other durable materials based on the
+            application.
+          </li>
+        </ul>
+        <a href="/path/to/your/file.pdf" class="download-button" download
+          >Download PDF</a
+        >
       </div>
     </div>
 
     <div class="features-section">
       <h2>Key Features</h2>
       <ul class="features-list">
-        <li><strong>Versatile Design:</strong>  Suitable for transporting a wide range of materials, including powders, granules, and bulk solids.
-          in the output.</li>
-        <li><strong>Durable Construction:</strong> Made with high-strength, wear-resistant materials to ensure longevity and handle abrasive or heavy materials.</li>
-        <li><strong>Adjustable Speed:</strong>	Features variable speed controls to adjust the rate of material transfer based on operational needs.</li>
-        <li><strong>Flexible Configuration:</strong>	Can be configured in various lengths, inclines, and orientations to fit specific application requirements.</li>
-        <li><strong>Compact and Space-Efficient:</strong>	Designed to be compact, making it suitable for use in confined spaces and alongside other machinery.</li>
-          <li><strong>Minimal Maintenance:</strong>o	Designed for low maintenance with easy access for cleaning and servicing.</li>
+        <li>
+          <strong>Versatile Design:</strong> Suitable for transporting a wide
+          range of materials, including powders, granules, and bulk solids.
+        </li>
+        <li>
+          <strong>Durable Construction:</strong> Made with high-strength,
+          wear-resistant materials to ensure longevity and handle abrasive or
+          heavy materials.
+        </li>
+        <li>
+          <strong>Adjustable Speed:</strong> Features variable speed controls to
+          adjust the rate of material transfer based on operational needs.
+        </li>
+        <li>
+          <strong>Flexible Configuration:</strong> Can be configured in various
+          lengths, inclines, and orientations to fit specific application
+          requirements.
+        </li>
+        <li>
+          <strong>Compact and Space-Efficient:</strong> Designed to be compact,
+          making it suitable for use in confined spaces and alongside other
+          machinery.
+        </li>
+        <li>
+          <strong>Minimal Maintenance:</strong> Designed for low maintenance
+          with easy access for cleaning and servicing.
+        </li>
       </ul>
     </div>
 
@@ -219,8 +228,7 @@
         service."
       </p>
       <p>
-        <strong>Rohit Pandey:</strong> "A must-have for anyone in the
-        industry."
+        <strong>Rohit Pandey:</strong> "A must-have for anyone in the industry."
       </p>
     </div>
 
@@ -232,89 +240,37 @@
       <a href="tel:+1234567890" class="contact-button">Contact Us</a>
     </div>
 
-    <footer
-      style="background: #fff8ef
-"
-      class="container_wrap socket_color"
-      id="socket"
-      role="contentinfo"
-      itemscope="itemscope"
-      itemtype="#"
-    >
-      <div
-        class="container"
-        style="
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          background-color: #d4dbb1;
-        "
-      >
-        <span
-          class="copyright"
-          style="color: #2d3436; font-weight: 800; font-size: 1.2em"
-          >© Infed</span
-        >
-        <nav
-          class="sub_menu_socket"
-          role="navigation"
-          itemscope="itemscope"
-          itemtype="#"
-        >
+    <footer class="footer">
+      <div class="container">
+        <span class="copyright">© Infed</span>
+        <nav class="sub_menu_socket">
           <div class="avia3-menu">
-            <ul id="avia3-menu" class="menu" style="display: flex; gap: 20px">
+            <ul id="avia3-menu" class="menu">
               <li
                 role="menuitem"
                 id="menu-item-290"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-1"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level"
               >
-                <a
-                  href="#"
-                  itemprop="url"
-                  tabindex="0"
-                  style="text-decoration: none"
-                >
-                  <span
-                    class="avia-menu-text"
-                    style="color: #2d3436; font-weight: 900"
-                    >Home</span
-                  >
+                <a href="#" itemprop="url" tabindex="0">
+                  <span class="avia-menu-text">Home</span>
                 </a>
               </li>
               <li
                 role="menuitem"
                 id="menu-item-289"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-2"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level"
               >
-                <a
-                  href="#"
-                  itemprop="url"
-                  tabindex="0"
-                  style="text-decoration: none"
-                >
-                  <span
-                    class="avia-menu-text"
-                    style="color: #2d3436; font-weight: 900"
-                    >About</span
-                  >
+                <a href="#" itemprop="url" tabindex="0">
+                  <span class="avia-menu-text">About</span>
                 </a>
               </li>
               <li
                 role="menuitem"
                 id="menu-item-291"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-top-level menu-item-top-level-3"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-top-level"
               >
-                <a
-                  href="#"
-                  itemprop="url"
-                  tabindex="0"
-                  style="text-decoration: none"
-                >
-                  <span
-                    class="avia-menu-text"
-                    style="color: #2d3436; font-weight: 900"
-                    >Contact</span
-                  >
+                <a href="#" itemprop="url" tabindex="0">
+                  <span class="avia-menu-text">Contact</span>
                 </a>
               </li>
             </ul>
