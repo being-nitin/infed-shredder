@@ -3475,24 +3475,47 @@ zum Schutz der Umwelt.</a></p>
     <div class="centered-image-container">
         <img src="images/top-products.jpg" alt="Top Products" class="centered-image">
     </div>
-
+    
     <style>
-        /* Remove previous styling */
-.centered-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Make the container take up the full viewport height */
-    background-color: #fff8ef; /* Optional: Adjust the background color */
-}
-
-.centered-image {
-    max-width: 100%; /* Ensure the image doesn't exceed the screen width */
-    max-height: 100%; /* Ensure the image doesn't exceed the screen height */
-    object-fit: contain; /* Ensure the image maintains its aspect ratio and fits within the container */
-}
-
+    /* Center the image and maintain aspect ratio */
+    .centered-image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto; /* Allow the container height to adjust based on content */
+        padding: 20px; /* Add some padding around the image */
+        background-color: #fff8ef; /* Optional: Adjust the background color */
+        box-sizing: border-box; /* Ensure padding is included in the container's width */
+    }
+    
+    .centered-image {
+        max-width: 100%; /* Ensure the image doesn't exceed the screen width */
+        height: auto; /* Let the height adjust automatically */
+        object-fit: contain; /* Maintain aspect ratio while fitting the container */
+    }
+    
+    /* Media Queries to adjust image size and spacing on smaller screens */
+    @media (max-width: 767px) {
+        .centered-image-container {
+            padding: 10px; /* Reduce padding for smaller screens */
+        }
+    
+        .centered-image {
+            max-width: 90%; /* Slightly reduce the image size for small screens */
+        }
+    }
+    
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .centered-image-container {
+            padding: 15px; /* Moderate padding for tablets */
+        }
+    
+        .centered-image {
+            max-width: 95%; /* Slightly reduce image size on tablet screens */
+        }
+    }
     </style>
+    
 
 
 
@@ -3557,10 +3580,16 @@ zum Schutz der Umwelt.</a></p>
     </div>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&family=Lato:wght@400;700&display=swap');
-        /* Keeping the original container style intact */
+       @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&family=Lato:wght@400;700&display=swap');
 
-        .av-special-heading h2 {
+/* Keeping the original container style intact */
+.container {
+    max-width: 200%; /* Ensure the container stretches fully on small screens */
+    padding: 0 15px; /* Add a little padding for small screens */
+    box-sizing: border-box;
+}
+
+.av-special-heading h2 {
     font-family: 'Merriweather', serif; /* Professional serif font */
     font-size: 36px;
     color: #2c3e50; /* Dark, professional color */
@@ -3582,81 +3611,98 @@ zum Schutz der Umwelt.</a></p>
     font-weight: 400;
 }
 
-        .avia-image-container img {
-            width: 100%;
-            height: auto;
-            max-width: 495px;
-            margin: 0 auto;
-        }
-    
-        .flex_column_table {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-        }
-    
-        .flex_column_table .flex_column {
-            width: 100%;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-    
-        .flex_column_table .flex_column:first-child {
-            margin-bottom: 0;
-        }
-    
-        .flex_column_table .flex_column_table_cell {
-            width: 100%;
-            max-width: 100%;
-        }
-    
-        .av-special-heading {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-    
-        /* Media Queries for responsiveness */
-        @media (min-width: 768px) {
-            .flex_column_table .flex_column {
-                width: 33.33%;
-                max-width: 33.33%;
-            }
-    
-            .flex_column_table .flex_column_table_cell {
-                width: 66.66%;
-                max-width: 66.66%;
-            }
-    
-            .avia-image-container img {
-                max-width: 100%;
-                height: auto;
-            }
-    
-            .av-special-heading {
-                text-align: left;
-            }
-        }
-    
-        @media (min-width: 1024px) {
-            .flex_column_table {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-    
-            .flex_column_table .flex_column {
-                width: 33.33%;
-            }
-    
-            .flex_column_table .flex_column_table_cell {
-                width: 66.66%;
-            }
-    
-            .avia-image-container img {
-                width: auto;
-                height: 400px;
-            }
-        }
+.avia-image-container img {
+    width: 100%;
+    height: auto;
+    max-width: 495px;
+    margin: 0 auto;
+}
+
+.flex_column_table {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.flex_column_table .flex_column {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.flex_column_table .flex_column:first-child {
+    margin-bottom: 0;
+}
+
+.flex_column_table .flex_column_table_cell {
+    width: 100%;
+    max-width: 100%;
+}
+
+.av-special-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Media Queries for responsiveness */
+@media (min-width: 768px) {
+    .flex_column_table .flex_column {
+        width: 33.33%;
+        max-width: 33.33%;
+    }
+
+    .flex_column_table .flex_column_table_cell {
+        width: 66.66%;
+        max-width: 66.66%;
+    }
+
+    .avia-image-container img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .av-special-heading {
+        text-align: left;
+    }
+}
+
+@media (min-width: 1024px) {
+    .flex_column_table {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .flex_column_table .flex_column {
+        width: 33.33%;
+    }
+
+    .flex_column_table .flex_column_table_cell {
+        width: 66.66%;
+    }
+
+    .avia-image-container img {
+        width: auto;
+        height: 400px;
+    }
+}
+
+/* Additional styles for small screens to fix spacing issues */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 5px; /* Reducing side padding for small screens */
+    }
+
+    .flex_column_table {
+        padding: 0; /* Remove additional space */
+    }
+
+    .flex_column_table .flex_column,
+    .flex_column_table .flex_column_table_cell {
+        width: 200%; /* Ensure full width usage on small screens */
+    }
+}
+
 
     </style>
 
