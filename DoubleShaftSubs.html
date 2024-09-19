@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dewatering Machine</title>
+    <title>Double Shaft Shredder Machine: :</title>
     <style>
       body {
         font-family: "Arial", sans-serif;
@@ -203,7 +203,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <h1>Dewatering Machine</h1>
+        <h1>Double Shaft Shredder Machine: :</h1>
         <p>
           Select a sub-product to explore the available products, and click to
           see detailed information.
@@ -212,54 +212,109 @@
 
       <!-- Sub-Product List -->
       <div class="sub-products-list">
-        <div
-          style="
-            background-image: url(/images/dewateringnew.jpg);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100px;
-            width: 100%;
-            font-size: large;
-            font: bold;
-            font-weight: 700;
-          "
-          class="sub-product"
-          onclick="showProducts('subProductOne')"
-        >
-          Food Waste/ Organic Solid Waste
+        <div class="sub-product" onclick="showProducts('subProductOne')">
+          Can shredder Machine
         </div>
         <div class="sub-product" onclick="showProducts('subProductTwo')">
-          Cow Dung
+          Bio Mining Shredder Machine
+        </div>
+        <div class="sub-product" onclick="showProducts('subProductThree')">
+          Bio Medical Waste Shredder Machine
+        </div>
+        <div class="sub-product" onclick="showProducts('subProductFour')">
+          Cloth Waste Shredder Machine
+        </div>
+        <div class="sub-product" onclick="showProducts('subProductFive')">
+          Slauther house Waste Shredder
+        </div>
+        <div class="sub-product" onclick="showProducts('subProductSix')">
+          Plastic Waste Shredder
+        </div>
+        <div class="sub-product" onclick="showProducts('subProductSeven')">
+          RDF Shredder
         </div>
       </div>
 
       <!-- Products under Sub-Product One -->
       <div id="subProductOne" class="products-list hidden">
         <div class="product" onclick="showProductDetails('productOne')">
-          Product 1
+          MC2108
         </div>
         <div class="product" onclick="showProductDetails('productTwo')">
-          Product 2
+          CSM-2344
         </div>
         <div class="product" onclick="showProductDetails('productThree')">
-          Product 3
+          MC-1822
         </div>
       </div>
 
       <!-- Products under Sub-Product Two -->
       <div id="subProductTwo" class="products-list hidden">
         <div class="product" onclick="showProductDetails('productFour')">
-          DWM300
+          BMSW-5534
         </div>
         <div class="product" onclick="showProductDetails('productFive')">
-          DWM500
+          BMSW-3020
         </div>
       </div>
 
+      <div id="subProductThree" class="products-list hidden">
+        <div class="product" onclick="showProductDetails('productSix')">
+          PSM-1524
+        </div>
+        <div class="product" onclick="showProductDetails('productSeven')">
+          PSM-1520
+        </div>
+        <div class="product" onclick="showProductDetails('productEight')">
+          PSM-1530
+        </div>
+      </div>
+      <div id="subProductFour" class="products-list hidden">
+        <div class="product" onclick="showProductDetails('productNine')">
+          CSM-1524
+        </div>
+        <div class="product" onclick="showProductDetails('productTen')">
+          CSM-1520
+        </div>
+        <div class="product" onclick="showProductDetails('productEleven')">
+          CSM-1530
+        </div>
+      </div>
+      <div id="subProductFive" class="products-list hidden">
+        <div class="product" onclick="showProductDetails('productTwelve')">
+          SWS-2320(CS)
+        </div>
+        <div class="product" onclick="showProductDetails('productThirteen')">
+          SWS-2340(CS)
+        </div>
+      </div>
+      <div id="subProductSix" class="products-list hidden">
+        <div class="product" onclick="showProductDetails('productFourteen')">
+          PSM-1524
+        </div>
+        <div class="product" onclick="showProductDetails('productFifteen')">
+          PSM-1520
+        </div>
+        <div class="product" onclick="showProductDetails('productSixteen')">
+          PSM-1530
+        </div>
+      </div>
+      <div id="subProductSeven" class="products-list hidden"></div>
+        <div class="product" onclick="showProductDetails('productSeventeen')">
+            RDF-2428
+
+        </div>
+        <!-- <div class="product" onclick="showProductDetails('productFifteen')">
+          PSM-1520
+        </div>
+        <div class="product" onclick="showProductDetails('productSixteen')">
+          PSM-1530
+        </div> -->
+      </div>
       <!-- Product Details Section -->
       <div id="productOne" class="product-details">
-        <h2>Product 1</h2>
+        <h2>MC2108
+        </h2>
         <img src="/images/product1.png" alt="Product 1" class="product-image" />
         <p class="product-description">
           This is a description for Product 1. It's a great product with
@@ -268,7 +323,8 @@
       </div>
 
       <div id="productTwo" class="product-details">
-        <h2>Product 2</h2>
+        <h2>CSM-2344
+        </h2>
         <img src="/images/product2.png" alt="Product 2" class="product-image" />
         <p class="product-description">
           This is a description for Product 2. It comes with a range of useful
@@ -277,28 +333,18 @@
       </div>
 
       <div id="productThree" class="product-details">
-        <h2>Product 3</h2>
+        <h2> MC-1822
+        </h2>
         <img src="/images/product3.png" alt="Product 3" class="product-image" />
         <p class="product-description">
           Product 3 is known for its durability and efficient design.
         </p>
       </div>
 
-      <div
-        id="productFour"
-        class="product-details"
-        style="
-          border: 1px solid #ddd;
-          padding: 20px;
-          max-width: 800px;
-          margin: 0 auto;
-        "
-      >
-        <div class="product-header" style="display: flex; align-items: center">
-          <h2 style="margin: 0">DWM300</h2>
-        </div>
-
-        <div class="intro-section" style="margin-top: 20px">
+      <div id="productFour" class="product-details">
+        <h2>BMSW-5534
+        </h2>
+        <div class="intro-section">
           <div class="header">
             <h1>Dewatering Machine</h1>
             <h3>Industrial Dewatering for Efficient Waste Processing</h3>
@@ -309,20 +355,15 @@
             agricultural by-products, and more. These machines are essential for
             waste management and material processing.
           </p>
-          <img
-            src="/images/4.png"
-            alt="Dewatering Machine"
-            style="max-width: 100%; height: auto"
-          />
+          <img src="/images/4.png" alt="Dewatering Machine" />
         </div>
 
         <!-- Main Content Section -->
-        <div class="container" style="display: flex; margin-top: 20px">
+        <div class="container">
           <img
             src="/images/dewatering.jpg"
             alt="Project Image"
             class="project-image"
-            style="max-width: 50%; height: auto; margin-right: 20px"
           />
           <div class="description">
             <p><strong>Specifications:</strong></p>
@@ -335,9 +376,6 @@
               </li>
             </ul>
           </div>
-        </div>
-
-        <div style="margin-top: 20px">
           <h2>Features:</h2>
           <ul class="features-list">
             <li>Durable and corrosion-resistant material</li>
@@ -347,7 +385,7 @@
           </ul>
         </div>
 
-        <div class="features-section" style="margin-top: 20px">
+        <div class="features-section">
           <h2>Product Features:</h2>
           <ul>
             <li>Efficient dewatering mechanism</li>
@@ -358,7 +396,170 @@
       </div>
 
       <div id="productFive" class="product-details">
-        <h2>DWM500</h2>
+        <h2>BMSW-3020
+        </h2>
+        <div class="intro-section">
+          <div class="header">
+            <h1>Dewatering Machine</h1>
+            <h3>Industrial Dewatering for Efficient Waste Processing</h3>
+          </div>
+          <p>
+            A dewatering machine is designed to remove water from various types
+            of solid materials, including industrial sludge, food waste,
+            agricultural by-products, and more. These machines are essential for
+            waste management and material processing.
+          </p>
+          <img src="/images/4.png" alt="Dewatering Machine" />
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="container">
+          <img
+            src="/images/dewatering.jpg"
+            alt="Project Image"
+            class="project-image"
+          />
+          <div class="description">
+            <p><strong>Specifications:</strong></p>
+            <ul>
+              <li><strong>Motor Power:</strong> 3-15 HP</li>
+              <li><strong>Processing Capacity:</strong> 300-500 kg/hr</li>
+              <li><strong>Material:</strong> High-Grade Stainless Steel</li>
+              <li>
+                <strong>Applications:</strong> Organic Waste, Industrial Sludge
+              </li>
+            </ul>
+          </div>
+          <h2>Features:</h2>
+          <ul class="features-list">
+            <li>Durable and corrosion-resistant material</li>
+            <li>High dewatering efficiency</li>
+            <li>Energy-saving operation</li>
+            <li>Customizable configurations</li>
+          </ul>
+        </div>
+
+        <div class="features-section">
+          <h2>Product Features:</h2>
+          <ul>
+            <li>Efficient dewatering mechanism</li>
+            <li>Low maintenance cost</li>
+            <li>Eco-friendly operation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="productSix" class="product-details">
+        <h2>PSM-1524
+        </h2>
+        <div class="intro-section">
+          <div class="header">
+            <h1>Dewatering Machine</h1>
+            <h3>Industrial Dewatering for Efficient Waste Processing</h3>
+          </div>
+          <p>
+            A dewatering machine is designed to remove water from various types
+            of solid materials, including industrial sludge, food waste,
+            agricultural by-products, and more. These machines are essential for
+            waste management and material processing.
+          </p>
+          <img src="/images/4.png" alt="Dewatering Machine" />
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="container">
+          <img
+            src="/images/dewatering.jpg"
+            alt="Project Image"
+            class="project-image"
+          />
+          <div class="description">
+            <p><strong>Specifications:</strong></p>
+            <ul>
+              <li><strong>Motor Power:</strong> 3-15 HP</li>
+              <li><strong>Processing Capacity:</strong> 300-500 kg/hr</li>
+              <li><strong>Material:</strong> High-Grade Stainless Steel</li>
+              <li>
+                <strong>Applications:</strong> Organic Waste, Industrial Sludge
+              </li>
+            </ul>
+          </div>
+          <h2>Features:</h2>
+          <ul class="features-list">
+            <li>Durable and corrosion-resistant material</li>
+            <li>High dewatering efficiency</li>
+            <li>Energy-saving operation</li>
+            <li>Customizable configurations</li>
+          </ul>
+        </div>
+
+        <div class="features-section">
+          <h2>Product Features:</h2>
+          <ul>
+            <li>Efficient dewatering mechanism</li>
+            <li>Low maintenance cost</li>
+            <li>Eco-friendly operation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="productSeven" class="product-details">
+        <h2>PSM-1520
+        </h2>
+        <div class="intro-section">
+          <div class="header">
+            <h1>Dewatering Machine</h1>
+            <h3>Industrial Dewatering for Efficient Waste Processing</h3>
+          </div>
+          <p>
+            A dewatering machine is designed to remove water from various types
+            of solid materials, including industrial sludge, food waste,
+            agricultural by-products, and more. These machines are essential for
+            waste management and material processing.
+          </p>
+          <img src="/images/4.png" alt="Dewatering Machine" />
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="container">
+          <img
+            src="/images/dewatering.jpg"
+            alt="Project Image"
+            class="project-image"
+          />
+          <div class="description">
+            <p><strong>Specifications:</strong></p>
+            <ul>
+              <li><strong>Motor Power:</strong> 3-15 HP</li>
+              <li><strong>Processing Capacity:</strong> 300-500 kg/hr</li>
+              <li><strong>Material:</strong> High-Grade Stainless Steel</li>
+              <li>
+                <strong>Applications:</strong> Organic Waste, Industrial Sludge
+              </li>
+            </ul>
+          </div>
+          <h2>Features:</h2>
+          <ul class="features-list">
+            <li>Durable and corrosion-resistant material</li>
+            <li>High dewatering efficiency</li>
+            <li>Energy-saving operation</li>
+            <li>Customizable configurations</li>
+          </ul>
+        </div>
+
+        <div class="features-section">
+          <h2>Product Features:</h2>
+          <ul>
+            <li>Efficient dewatering mechanism</li>
+            <li>Low maintenance cost</li>
+            <li>Eco-friendly operation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="productEight" class="product-details">
+        <h2>PSM-1530
+        </h2>
         <div class="intro-section">
           <div class="header">
             <h1>Dewatering Machine</h1>
