@@ -3,313 +3,341 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ruby (Garbage Dispose Machine)</title>
+    <title>GDU20 (Garbage Dispose Machine)</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
+      /* General Body Styling */
       body {
-        font-family: "Arial", sans-serif;
+        font-family: "Poppins", sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #fff8ef;
+        background-color: #f4f4f9;
         color: #333;
       }
+
+      /* Container Styling */
       .container {
         max-width: 1200px;
         margin: 50px auto;
         background: #fff;
         padding: 20px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        border-radius: 8px;
-        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
         display: flex;
         flex-direction: row-reverse;
         align-items: center;
+        transition: transform 0.3s ease-in-out;
       }
+
+      .container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Header Styling */
       .header {
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
       }
+
       .header h1 {
-        margin: 0;
-        font-size: 2.5em;
+        font-size: 3em;
         color: #2c3e50;
+        font-weight: 600;
       }
+
+      .header h3 {
+        font-size: 1.5em;
+        color: #2980b9;
+        margin-top: 10px;
+      }
+
+      /* Image Styling */
       .project-image {
         width: 40%;
         height: auto;
-        border-radius: 8px;
-        transition: transform 0.3s;
-        margin-left: 20px;
+        border-radius: 10px;
+        transition: transform 0.4s, box-shadow 0.4s;
       }
+
       .project-image:hover {
-        transform: scale(1.05);
+        transform: scale(1.08);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       }
+
+      /* Description Styling */
       .description {
-        line-height: 1.6;
+        line-height: 1.7;
         width: 60%;
       }
+
       .description p {
-        margin: 10px 0;
+        margin: 15px 0;
       }
+
       .description strong {
         color: #2980b9;
       }
+
+      /* Button Styling */
       .download-button,
       .contact-button {
         display: inline-block;
-        padding: 10px 20px;
+        padding: 12px 24px;
         margin: 20px 0;
         font-size: 1em;
         color: #fff;
-        background-color: #2980b9;
+        background-image: linear-gradient(to right, #6dd5fa, #2980b9);
         border: none;
-        border-radius: 5px;
+        border-radius: 8px;
         cursor: pointer;
         text-align: center;
         text-decoration: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: background-image 0.3s, transform 0.3s;
       }
+
+      .download-button:hover,
+      .contact-button:hover {
+        background-image: linear-gradient(to right, #3498db, #6dd5fa);
+        transform: scale(1.05);
+      }
+
+      /* Intro Section */
+      .intro-section {
+        max-width: 1200px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 30px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .intro-section img {
+        width: 70%;
+        margin: 20px 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Features Section */
+      .features-section {
+        max-width: 1200px;
+        margin: 30px auto;
+        background: #fff;
+        padding: 30px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+
+      .features-list {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .features-list li {
+        margin: 15px 0;
+        font-size: 1.1em;
+        line-height: 1.6;
+      }
+
+      .features-list li::before {
+        content: "✔";
+        color: #2980b9;
+        margin-right: 10px;
+      }
+
+      /* Reviews Section */
+      .reviews-section {
+        max-width: 1200px;
+        margin: 30px auto;
+        background: #fff;
+        padding: 30px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+
+      .reviews-section p {
+        font-size: 1.2em;
+        margin: 15px 0;
+      }
+
+      .reviews-section strong {
+        color: #2980b9;
+      }
+
+      /* Contact Section */
       .contact-section {
         margin-top: 50px;
         text-align: center;
       }
+
       .contact-section p {
-        font-size: 1.2em;
+        font-size: 1.3em;
       }
+
       .contact-section .contact-button {
         margin-top: 10px;
       }
-      .intro-section,
-      .features-section,
-      .reviews-section {
-        max-width: 1200px;
-        margin: 20px auto;
-        background: #fff;
-        padding: 20px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-      }
-      .intro-section p,
-      .features-section p,
-      .reviews-section p {
-        margin: 10px 0;
-      }
-      .features-list {
-        list-style-type: disc;
-        padding-left: 20px;
-      }
-      .footer {
+
+      /* Footer Styling */
+      footer {
+        background-color: #d4dbb1;
+        padding: 15px;
         text-align: center;
-        margin-top: 30px;
-        font-size: 0.9em;
-        color: #777;
-        width: 100%;
+        margin-top: 40px;
       }
+
+      footer .copyright {
+        color: #2c3e50;
+        font-weight: 600;
+        font-size: 1.1em;
+      }
+
+      footer nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+      }
+
+      footer nav ul li a {
+        color: #2c3e50;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      footer nav ul li a:hover {
+        color: #2980b9;
+      }
+
+      /* Media Queries */
       @media (max-width: 800px) {
         .container {
           flex-direction: column;
-          padding: 15px;
+          padding: 20px;
         }
+
         .project-image {
           width: 100%;
-          margin: 0 0 20px 0;
+          margin-bottom: 20px;
         }
+
         .description {
           width: 100%;
         }
+
         .header h1 {
-          font-size: 2em;
+          font-size: 2.2em;
+        }
+
+        .header h3 {
+          font-size: 1.2em;
         }
       }
     </style>
   </head>
+
   <body>
+    <!-- Intro Section -->
     <div class="intro-section">
       <div class="header">
         <h1>GDU20 (Garbage Dispose Machine)</h1>
-        <h3>Product Overview:</h3>
       </div>
-      <p>
-        Infed Bio Upakaran LLP manufactures efficient and durable garbage
-        disposal machines designed to handle various types of waste. These
-        machines are essential for waste management in residential, commercial,
-        and industrial settings.
-      </p>
-      <img
-        style="width: 70%; margin: 10%"
-        src="/images/1.png"
-        alt="GDU20 Machine"
-      />
+
+      <img src="/images/GDU20.jpeg" alt="Ruby (Garbage Dispose Machine)" />
     </div>
 
+    <!-- Main Content Section -->
     <div class="container">
-      <img
-        src="/images/minion4.webp"
-        alt="Project Image"
-        class="project-image"
-      />
-      <div>
-        <p><strong>Specification:</strong></p>
+      <img src="/images/GDU20.jpeg" alt="Project Image" class="project-image" />
+
+      <!-- "Shaft : Twin Shaft Grinder Mechanism 
+      Cutter Material : ‘4140’
+      High carbon alloy steel
+     Shredding Material: Organic Waste    Motor Capacity:- 2HP/3 Phase
+     Shredding Capacity: 250-300kg/hr
+     Gearbox Size:- 75 (Worm Gearbox)"			 -->
+
+      <div class="description">
+        <p><strong>Specifications:</strong></p>
         <ul>
+          <li><strong>Motor Capacity:</strong>2hp</li>
+          <li><strong>Motor Make:</strong>Hindustan/BEM/Remi</li>
+          <li><strong>Orientation:</strong>vertical</li>
+          <li><strong>Rotate Cutter:</strong> SS304</li>
+          <li><strong>Stationary Cutter:</strong>4140</li>
           <li>
-            <strong>Motor Power: </strong>Ranges from 2 kW to 10 kW depending on
-            the model.
+            <strong>Crushing Capacity:</strong>75-100 Kg/hr. (As per garbage )
           </li>
-          <li>
-            <strong>Processing Capacity:</strong> Capable of handling up to 1000
-            kg/hr.
-          </li>
-          <li>
-            <strong>Dimensions:</strong>
-            Vary by model, typically around 2000 mm x 1200 mm x 1500 mm.
-          </li>
-          <li><strong>Weight:</strong> Approximately 500kg</li>
+          <li><strong>Material Crushed:</strong>Food Waste/Organic Waste</li>
+          <li><strong>Body and Hopper:</strong>SS304</li>
+          <li><strong>Color:</strong>Green</li>
         </ul>
-        <a href="/path/to/your/file.pdf" class="download-button" download
+        <a href="/PDF/GDU-20 -Model.pdf" class="download-button" download
           >Download PDF</a
         >
       </div>
     </div>
 
+    <!-- Features Section -->
     <div class="features-section">
       <h2>Key Features</h2>
       <ul class="features-list">
         <li>
-          <strong>Robust Construction:</strong> Built with high-quality
-          materials to ensure longevity and reliability.
+          <strong>Efficiency:</strong> Highly efficient water removal from
+          materials.
         </li>
         <li>
-          <strong>Efficiency:</strong> Designed to handle large volumes of waste
-          with minimal power consumption.
+          <strong>Durability:</strong> Built with stainless steel for longevity.
         </li>
         <li>
-          <strong>Safety:</strong> Equipped with safety features to prevent
-          accidents during operation.
-        </li>
-        <li>
-          <strong>User-Friendly Operation:</strong> Simple controls for easy
-          operation and maintenance.
-        </li>
-        <li>
-          <strong>Low Noise:</strong> Operates quietly, making it suitable for
-          use in noise-sensitive environments.
-        </li>
-        <li>
-          <strong>Versatility:</strong> Capable of processing different types of
-          waste, including organic, plastic, and metal.
+          <strong>Automation:</strong> Fully automated operation with low manual
+          intervention.
         </li>
       </ul>
     </div>
 
+    <!-- Reviews Section -->
     <div class="reviews-section">
       <h2>Customer Reviews</h2>
       <p>
-        <strong>Rahul Jha:</strong> "This product has changed the way I work.
-        Highly recommend it!"
+        "The dewatering machine has drastically reduced our waste disposal
+        costs, and it's very easy to maintain."
       </p>
       <p>
-        <strong>Sahil Singh:</strong> "Exceptional quality and great customer
-        service."
-      </p>
-      <p>
-        <strong>Rohit Pandey:</strong> "A must-have for anyone in the industry."
+        <strong>- A satisfied customer</strong>
       </p>
     </div>
 
+    <!-- Contact Section -->
     <div class="contact-section">
-      <p>
-        If you have any questions or would like to know more about the product,
-        please don't hesitate to contact us.
-      </p>
-      <a href="tel:+1234567890" class="contact-button">Contact Us</a>
+      <p>Contact us for more information on our dewatering machines!</p>
+      <a href="mailto:sales@dewateringmachines.com" class="contact-button"
+        >Contact Us</a
+      >
     </div>
 
-    <footer
-      style="background: #fff8ef"
-      class="container_wrap socket_color"
-      id="socket"
-      role="contentinfo"
-      itemscope="itemscope"
-      itemtype="#"
-    >
-      <div
-        class="container"
-        style="
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          background-color: #d4dbb1;
-        "
-      >
-        <span
-          class="copyright"
-          style="color: #2d3436; font-weight: 800; font-size: 1.2em"
-          >© Infed</span
-        >
-        <nav
-          class="sub_menu_socket"
-          role="navigation"
-          itemscope="itemscope"
-          itemtype="#"
-        >
-          <div class="avia3-menu">
-            <ul id="avia3-menu" class="menu" style="display: flex; gap: 20px">
-              <li
-                role="menuitem"
-                id="menu-item-290"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-1"
-              >
-                <a
-                  href="#"
-                  itemprop="url"
-                  tabindex="0"
-                  style="text-decoration: none"
-                >
-                  <span
-                    class="avia-menu-text"
-                    style="color: #2d3436; font-weight: 900"
-                    >Home</span
-                  >
-                </a>
-              </li>
-              <li
-                role="menuitem"
-                id="menu-item-289"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-2"
-              >
-                <a
-                  href="#"
-                  itemprop="url"
-                  tabindex="0"
-                  style="text-decoration: none"
-                >
-                  <span
-                    class="avia-menu-text"
-                    style="color: #2d3436; font-weight: 900"
-                    >About</span
-                  >
-                </a>
-              </li>
-              <li
-                role="menuitem"
-                id="menu-item-291"
-                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-top-level menu-item-top-level-3"
-              >
-                <a
-                  href="#"
-                  itemprop="url"
-                  tabindex="0"
-                  style="text-decoration: none"
-                >
-                  <span
-                    class="avia-menu-text"
-                    style="color: #2d3436; font-weight: 900"
-                    >Contact</span
-                  >
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
+    <!-- Footer -->
+    <footer>
+      <p class="copyright">© Infed</p>
+      <nav>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </nav>
     </footer>
   </body>
 </html>
