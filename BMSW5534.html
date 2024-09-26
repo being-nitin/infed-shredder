@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MC1030</title>
+    <title>BMSW-5534</title>
 
     <!-- Google Fonts -->
     <link
@@ -19,6 +19,36 @@
         padding: 0;
         background-color: #f4f4f9;
         color: #333;
+      }
+
+      /* Intro Section Centered */
+      .intro-section {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+        min-height: 100vh; /* Take full viewport height */
+      }
+
+      .intro-section h1 {
+        font-size: 3em;
+        color: #2c3e50;
+        font-weight: 600;
+      }
+
+      .intro-section img {
+        width: 50%;
+        height: auto;
+        margin: 20px 0;
+        border-radius: 10px;
+        transition: transform 0.4s, box-shadow 0.4s;
+      }
+
+      .intro-section img:hover {
+        transform: scale(1.08);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       }
 
       /* Container Styling */
@@ -38,24 +68,6 @@
       .container:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-      }
-
-      /* Header Styling */
-      .header {
-        text-align: center;
-        margin-bottom: 30px;
-      }
-
-      .header h1 {
-        font-size: 3em;
-        color: #2c3e50;
-        font-weight: 600;
-      }
-
-      .header h3 {
-        font-size: 1.5em;
-        color: #2980b9;
-        margin-top: 10px;
       }
 
       /* Image Styling */
@@ -85,7 +97,22 @@
         color: #2980b9;
       }
 
+      /* Input Fields Styling */
+      .input-container {
+        margin: 20px 0;
+      }
+
+      .input-container input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        font-size: 1em;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
+
       /* Button Styling */
+      .view-button,
       .download-button,
       .contact-button {
         display: inline-block;
@@ -103,28 +130,11 @@
         transition: background-image 0.3s, transform 0.3s;
       }
 
+      .view-button:hover,
       .download-button:hover,
       .contact-button:hover {
         background-image: linear-gradient(to right, #3498db, #6dd5fa);
         transform: scale(1.05);
-      }
-
-      /* Intro Section */
-      .intro-section {
-        max-width: 1200px;
-        margin: 40px auto;
-        background: #fff;
-        padding: 30px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        text-align: center;
-      }
-
-      .intro-section img {
-        width: 70%;
-        margin: 20px 0;
-        border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       }
 
       /* Features Section */
@@ -248,29 +258,19 @@
   </head>
 
   <body>
-    <!-- Intro Section -->
+    <!-- Intro Section Centered -->
     <div class="intro-section">
-      <div class="header">
-        <h1>MC1030</h1>
-      </div>
-
-      <img src="/images/MC1030.jpeg" alt="Dewatering Machine" />
+      <h1>BMSW-5534</h1>
+      <img src="/images/BMSW5534.jpeg" alt="Dewatering Machine" />
     </div>
 
     <!-- Main Content Section -->
     <div class="container">
       <img
-        src="/images/MC1030.jpeg"
+        src="/images/BMSW5534.jpeg"
         alt="Project Image"
         class="project-image"
       />
-
-      <!-- "Shaft : Twin Shaft Grinder Mechanism 
-      Cutter Material : ‘4140’
-      High carbon alloy steel
-     Shredding Material: Organic Waste    Motor Capacity:- 2HP/3 Phase
-     Shredding Capacity: 250-300kg/hr
-     Gearbox Size:- 75 (Worm Gearbox)"			 -->
 
       <div class="description">
         <p><strong>Specifications:</strong></p>
@@ -280,49 +280,51 @@
             <strong>Cutter Material :</strong> ‘4140’. High carbon alloy steel
           </li>
           <li><strong>Shredding Material:</strong> Organic Waste.</li>
-          <li><strong>Motor Capacity:</strong> 2HP/3. phase</li>
+          <li><strong>Motor Capacity:</strong> 5HP/3 phase</li>
+          <li>
+            <strong>Shredding Capacity:</strong> 400-500kg/hr (As per garbage)
+          </li>
+          <li><strong>Gearbox Size:</strong> 110(worm gearbox)</li>
         </ul>
-        <a href="#" class="download-button" onclick="downloadMultiplePDFs()"
-          >Download PDF</a
+
+        <!-- Input Fields -->
+        <div class="input-container">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Your Phone Number"
+            required
+          />
+        </div>
+
+        <!-- View PDF Button -->
+        <a href="/PDF/Bio Mining Shredder Machine.pdf class="view-button" target="_blank"
+          >View PDF</a
         >
+
+        <!-- Download Button -->
+        <button class="download-button" onclick="handleDownload()">
+          Download PDF
+        </button>
       </div>
     </div>
-
-    <script>
-      function downloadMultiplePDFs() {
-        // Create two anchor elements to download both PDFs
-        const link1 = document.createElement("a");
-        const link2 = document.createElement("a");
-
-        // Set the URLs of the PDFs
-        link1.href = "/PDF/MC100-Series1.pdf";
-        link2.href = "PDF/MC1030-Shredder Machine on M.S Plate - Copy.pdf";
-
-        // Set the download attribute to automatically download the files
-        link1.download = "MC100-Series1.pdf";
-        link2.download = "MC1030-Shredder Machine on M.S Plate - Copy.pdf";
-
-        // Programmatically click the links to trigger the downloads
-        link1.click();
-        link2.click();
-      }
-    </script>
 
     <!-- Features Section -->
     <div class="features-section">
       <h2>Key Features</h2>
       <ul class="features-list">
+        <li><strong>Shredding Material:</strong> Aluminum Can</li>
         <li>
-          <strong>Efficiency:</strong> Highly efficient water removal from
-          materials.
+          <strong>Shredding Machine Type:</strong> Double Shaft Suitable for 7.5
+          hp motor *2 nos. Helical gearbox * 2 nos.
         </li>
-        <li>
-          <strong>Durability:</strong> Built with stainless steel for longevity.
-        </li>
-        <li>
-          <strong>Automation:</strong> Fully automated operation with low manual
-          intervention.
-        </li>
+        <li><strong>Shredding Capacity:</strong> 700 to 900 can/hr</li>
+        <li><strong>Input Size:</strong> 450mm* 395mm</li>
+        <li><strong>Cutter:</strong> SS304</li>
+        <li><strong>Cutter Thickness:</strong> 15mm * 5 teeth</li>
+        <li><strong>Cutter Diameter:</strong> 200mm</li>
       </ul>
     </div>
 
@@ -333,9 +335,7 @@
         "The dewatering machine has drastically reduced our waste disposal
         costs, and it's very easy to maintain."
       </p>
-      <p>
-        <strong>- A satisfied customer</strong>
-      </p>
+      <p><strong>- A satisfied customer</strong></p>
     </div>
 
     <!-- Contact Section -->
@@ -358,5 +358,36 @@
         </ul>
       </nav>
     </footer>
+
+    <script>
+      function handleDownload() {
+        // Collect input values
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+
+        // Ensure all fields are filled
+        if (!name || !email || !phone) {
+          alert("Please fill in all fields.");
+          return;
+        }
+
+        // WhatsApp Integration
+        const whatsappNumber = "+919519613735"; // Replace with actual WhatsApp number
+        const message = `Name: ${name}, Email: ${email}, Phone: ${phone}`;
+        const whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(
+          message
+        )}`;
+
+        // Open WhatsApp with the data
+        window.open(whatsappLink, "_blank");
+
+        // Trigger PDF download
+        const downloadLink = document.createElement("a");
+        downloadLink.href = "/PDF/MC1020 (1).pdf"; // Ensure this is the correct path to your PDF
+        downloadLink.download = "MC2108.pdf";
+        downloadLink.click();
+      }
+    </script>
   </body>
 </html>
