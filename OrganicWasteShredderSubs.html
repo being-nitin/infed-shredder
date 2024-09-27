@@ -343,7 +343,7 @@
             <h1>MC1020</h1>
           </div>
 
-          <img src="/images/MC1020.jpeg" alt="Dewatering Machine" />
+          <!-- <img src="/images/MC1020.jpeg" alt="Dewatering Machine" /> -->
         </div>
 
         <!-- Main Content Section -->
@@ -371,9 +371,17 @@
               <li><strong>Shredding Material:</strong> Organic Waste Motor.</li>
               <li><strong>Capacity:</strong> 1.5HP/3.</li>
             </ul>
-            <a href="/PDF/MC1020.pdf" class="download-button" download
-              >Download PDF</a
+            <a
+              href="/PDF/Bio Mining Shredder Machine.pdf"
+              class="view-button"
+              target="_blank"
+              >View PDF</a
             >
+
+            <!-- Download Button -->
+            <button class="download-button" onclick="handleDownload()">
+              Download PDF
+            </button>
           </div>
         </div>
 
@@ -466,11 +474,16 @@
               <li><strong>Motor Capacity:</strong> 2HP/3. phase</li>
             </ul>
             <a
-              href="/PDF/MC1030-Shredder Machine on M.S Plate - Copy.pdf"
-              class="download-button"
-              download
-              >Download PDF</a
+              href="/PDF/Bio Mining Shredder Machine.pdf"
+              class="view-button"
+              target="_blank"
+              >View PDF</a
             >
+
+            <!-- Download Button -->
+            <button class="download-button" onclick="handleDownload()">
+              Download PDF
+            </button>
           </div>
         </div>
 
@@ -670,11 +683,16 @@
               <li><strong>Gearbox Size:</strong> 110(worm gearbox)</li>
             </ul>
             <a
-              href="/PDF/MC8020-Shredder Machine on M.S Plate - Copy.pdf"
-              class="download-button"
-              download
-              >Download PDF</a
+              href="/PDF/Bio Mining Shredder Machine.pdf"
+              class="view-button"
+              target="_blank"
+              >View PDF</a
             >
+
+            <!-- Download Button -->
+            <button class="download-button" onclick="handleDownload()">
+              Download PDF
+            </button>
           </div>
         </div>
 
@@ -772,11 +790,16 @@
               <li><strong>Gearbox Size:</strong> 110(worm gearbox)</li>
             </ul>
             <a
-              href="/PDF/MC8020-Shredder Machine on M.S Plate - Copy.pdf"
-              class="download-button"
-              download
-              >Download PDF</a
+              href="/PDF/Bio Mining Shredder Machine.pdf"
+              class="view-button"
+              target="_blank"
+              >View PDF</a
             >
+
+            <!-- Download Button -->
+            <button class="download-button" onclick="handleDownload()">
+              Download PDF
+            </button>
           </div>
         </div>
 
@@ -874,11 +897,16 @@
               <li><strong>Gearbox Size:</strong> 110(worm gearbox)</li>
             </ul>
             <a
-              href="/PDF/MC8020-Shredder Machine on M.S Plate - Copy.pdf"
-              class="download-button"
-              download
-              >Download PDF</a
+              href="/PDF/Bio Mining Shredder Machine.pdf"
+              class="view-button"
+              target="_blank"
+              >View PDF</a
             >
+
+            <!-- Download Button -->
+            <button class="download-button" onclick="handleDownload()">
+              Download PDF
+            </button>
           </div>
         </div>
 
@@ -936,7 +964,36 @@
       </div>
       <!-- Add more product details as needed -->
     </div>
+    <script>
+      function handleDownload() {
+        // Collect input values
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
 
+        // Ensure all fields are filled
+        if (!name || !email || !phone) {
+          alert("Please fill in all fields.");
+          return;
+        }
+
+        // WhatsApp Integration
+        const whatsappNumber = "+919519613735"; // Replace with actual WhatsApp number
+        const message = `Name: ${name}, Email: ${email}, Phone: ${phone}`;
+        const whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(
+          message
+        )}`;
+
+        // Open WhatsApp with the data
+        window.open(whatsappLink, "_blank");
+
+        // Trigger PDF download
+        const downloadLink = document.createElement("a");
+        downloadLink.href = "/PDF/MC1020 (1).pdf"; // Ensure this is the correct path to your PDF
+        downloadLink.download = "MC2108.pdf";
+        downloadLink.click();
+      }
+    </script>
     <script>
       function showProductDetails(productId) {
         const allProductDetails = document.querySelectorAll(".product-details");

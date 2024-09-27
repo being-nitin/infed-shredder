@@ -254,7 +254,7 @@
         <h1>MC1020</h1>
       </div>
 
-      <img src="/images/MC1020.jpeg" alt="Dewatering Machine" />
+      <!-- <img src="/images/MC1020.jpeg" alt="Dewatering Machine" /> -->
     </div>
 
     <!-- Main Content Section -->
@@ -281,7 +281,10 @@
           <li><strong>Shredding Material:</strong> Organic Waste Motor.</li>
           <li><strong>Capacity:</strong> 1.5HP/3.</li>
         </ul>
-        <a href="/PDF/Bio Mining Shredder Machine.pdf class="view-button" target="_blank"
+        <a
+          href="/PDF/Bio Mining Shredder Machine.pdf"
+          class="view-button"
+          target="_blank"
           >View PDF</a
         >
 
@@ -368,23 +371,23 @@
           const name = document.getElementById("name").value;
           const email = document.getElementById("email").value;
           const phone = document.getElementById("phone").value;
-  
+
           // Ensure all fields are filled
           if (!name || !email || !phone) {
             alert("Please fill in all fields.");
             return;
           }
-  
+
           // WhatsApp Integration
           const whatsappNumber = "+919519613735"; // Replace with actual WhatsApp number
           const message = `Name: ${name}, Email: ${email}, Phone: ${phone}`;
           const whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(
             message
           )}`;
-  
+
           // Open WhatsApp with the data
           window.open(whatsappLink, "_blank");
-  
+
           // Trigger PDF download
           const downloadLink = document.createElement("a");
           downloadLink.href = "/PDF/MC1020 (1).pdf"; // Ensure this is the correct path to your PDF

@@ -142,11 +142,11 @@
         machines are essential for waste management in residential, commercial,
         and industrial settings.
       </p>
-      <img
+      <!-- <img
         style="width: 70%; margin: 10%"
         src="/images/2.png"
         alt="Garden Waste Shredder Machine"
-      />
+      /> -->
     </div>
 
     <div class="container">
@@ -172,14 +172,17 @@
           </li>
           <li><strong>Weight:</strong> Approximately 400kg</li>
         </ul>
-        <a href="/PDF/Bio Mining Shredder Machine.pdf class=" view-button" target="_blank"
-        >View PDF</a
-      >
+        <a
+          href="/PDF/Bio Mining Shredder Machine.pdf"
+          class="view-button"
+          target="_blank"
+          >View PDF</a
+        >
 
-      <!-- Download Button -->
-      <button class="download-button" onclick="handleDownload()">
-        Download PDF
-      </button>
+        <!-- Download Button -->
+        <button class="download-button" onclick="handleDownload()">
+          Download PDF
+        </button>
       </div>
     </div>
 
@@ -284,5 +287,35 @@
         </nav>
       </div>
     </footer>
+    <script>
+      function handleDownload() {
+        // Collect input values
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+
+        // Ensure all fields are filled
+        if (!name || !email || !phone) {
+          alert("Please fill in all fields.");
+          return;
+        }
+
+        // WhatsApp Integration
+        const whatsappNumber = "+919519613735"; // Replace with actual WhatsApp number
+        const message = `Name: ${name}, Email: ${email}, Phone: ${phone}`;
+        const whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(
+          message
+        )}`;
+
+        // Open WhatsApp with the data
+        window.open(whatsappLink, "_blank");
+
+        // Trigger PDF download
+        const downloadLink = document.createElement("a");
+        downloadLink.href = "/PDF/MC1020 (1).pdf"; // Ensure this is the correct path to your PDF
+        downloadLink.download = "MC2108.pdf";
+        downloadLink.click();
+      }
+    </script>
   </body>
 </html>
