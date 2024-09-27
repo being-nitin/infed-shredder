@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inclined</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* General Body Styling */
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      /* Intro Section Centered */
+      .intro-section {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+        min-height: 100vh; /* Take full viewport height */
+      }
+
+      .intro-section h1 {
+        font-size: 3em;
+        color: #2c3e50;
+        font-weight: 600;
+      }
+
+      .intro-section img {
+        width: 50%;
+        height: auto;
+        margin: 20px 0;
+        border-radius: 10px;
+        transition: transform 0.4s, box-shadow 0.4s;
+      }
+
+      .intro-section img:hover {
+        transform: scale(1.08);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Container Styling */
+      .container {
+        max-width: 1200px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Image Styling */
+      .project-image {
+        width: 40%;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.4s, box-shadow 0.4s;
+      }
+
+      .project-image:hover {
+        transform: scale(1.08);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Description Styling */
+      .description {
+        line-height: 1.7;
+        width: 60%;
+      }
+
+      .description p {
+        margin: 15px 0;
+      }
+
+      .description strong {
+        color: #2980b9;
+      }
+
+      /* Input Fields Styling */
+      .input-container {
+        margin: 20px 0;
+      }
+
+      .input-container input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        font-size: 1em;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
+
+      /* Button Styling */
+      .view-button,
+      .download-button,
+      .contact-button {
+        display: inline-block;
+        padding: 12px 24px;
+        margin: 20px 0;
+        font-size: 1em;
+        color: #fff;
+        background-image: linear-gradient(to right, #6dd5fa, #2980b9);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: background-image 0.3s, transform 0.3s;
+      }
+
+      .view-button:hover,
+      .download-button:hover,
+      .contact-button:hover {
+        background-image: linear-gradient(to right, #3498db, #6dd5fa);
+        transform: scale(1.05);
+      }
+
+      /* Features Section */
+      .features-section {
+        max-width: 1200px;
+        margin: 30px auto;
+        background: #fff;
+        padding: 30px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+
+      .features-list {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .features-list li {
+        margin: 15px 0;
+        font-size: 1.1em;
+        line-height: 1.6;
+      }
+
+      .features-list li::before {
+        content: "✔";
+        color: #2980b9;
+        margin-right: 10px;
+      }
+
+      /* Reviews Section */
+      .reviews-section {
+        max-width: 1200px;
+        margin: 30px auto;
+        background: #fff;
+        padding: 30px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+
+      .reviews-section p {
+        font-size: 1.2em;
+        margin: 15px 0;
+      }
+
+      .reviews-section strong {
+        color: #2980b9;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        margin-top: 50px;
+        text-align: center;
+      }
+
+      .contact-section p {
+        font-size: 1.3em;
+      }
+
+      .contact-section .contact-button {
+        margin-top: 10px;
+      }
+
+      /* Footer Styling */
+      footer {
+        background-color: #d4dbb1;
+        padding: 15px;
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      footer .copyright {
+        color: #2c3e50;
+        font-weight: 600;
+        font-size: 1.1em;
+      }
+
+      footer nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+      }
+
+      footer nav ul li a {
+        color: #2c3e50;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      footer nav ul li a:hover {
+        color: #2980b9;
+      }
+
+      /* Media Queries */
+      @media (max-width: 800px) {
+        .container {
+          flex-direction: column;
+          padding: 20px;
+        }
+
+        .project-image {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+
+        .description {
+          width: 100%;
+        }
+
+        .header h1 {
+          font-size: 2.2em;
+        }
+
+        .header h3 {
+          font-size: 1.2em;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Intro Section Centered -->
+    <div class="intro-section">
+      <h1></h1>
+      <img src="/images/beltconveyer.jpg" alt="Dewatering Machine" />
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="container">
+      <img
+        src="/images/beltconveyer.jpg"
+        alt="Project Image"
+        class="project-image"
+      />
+
+      <!-- "Cutter Material : “4140” Hardened and ground
+ High carbon Alloy Steel
+ Impeller : “ D2 ” Alloy Metal
+ Incline Orientation
+ Suitable for Bottle [i.e Beer Bottle, Rum Bottle etc]
+ Motor : 2 HP/3 Phase Electric Motor
+Machine Body : Mild Steel Fabrication
+ Input Size of Hopper : φ150mm
+ Output : Convert into Sand form,
+ Collected in Air Filter Cloth bag
+ Capacity : 720 Bottle/Hr
+ Machine Size:- 430mm(L) X 255mm(W) X 1200mm(H)
+ Machine Weight : 125kg"			 -->
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+      <div class="description">
+        <p><strong>Specifications:</strong></p>
+        <ul>
+            <li>
+                <strong>Cutter Material  :</strong>“4140” Hardened and ground
+                High carbon Alloy Steel
+              </li>  
+          <li><strong> Impeller :</strong> “ D2 ” Alloy Metal
+            Incline Orientation Suitable for Bottle [i.e Beer Bottle, Rum Bottle etc] </li>
+          <li>
+            <strong>Motor :</strong>5 HP/3 Phase Electric Motor
+          </li>
+          <!-- <li><strong>No Cutter Stack:</strong> Retightening required high flow side rail.</li> -->
+          <li><strong>Power Consumption:</strong>1.6 Units per hour</li>
+          <li>
+            <strong>Input Size of Hopper:</strong>φ150mm
+          </li>
+          <li><strong>Output:</strong>Convert into Sand form,
+            Collected in Air Filter Cloth bag</li>
+          <li><strong>Capacity:</strong>720 Bottle/Hr</li>
+          <li><strong>Machine Size:</strong>430mm(L) X 255mm(W) X 1200mm(H)</li>
+          <li><strong>Machine Weight:</strong>125kg</li>
+        </ul>
+
+        <!-- Input Fields -->
+        <div class="input-container">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Your Phone Number"
+            required
+          />
+        </div>
+
+        <!-- View PDF Button -->
+        <a href="/PDF/Bio Mining Shredder Machine.pdf class="view-button" target="_blank"
+          >View PDF</a
+        >
+
+        <!-- Download Button -->
+        <button class="download-button" onclick="handleDownload()">
+          Download PDF
+        </button>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-section">
+      <h2>Key Features</h2>
+      <ul class="features-list">
+        <li><strong>Shredding Material:</strong> Aluminum Can</li>
+        <li>
+          <strong>Shredding Machine Type:</strong> Double Shaft Suitable for 7.5
+          hp motor *2 nos. Helical gearbox * 2 nos.
+        </li>
+        <li><strong>Shredding Capacity:</strong> 700 to 900 can/hr</li>
+        <li><strong>Input Size:</strong> 450mm* 395mm</li>
+        <li><strong>Cutter:</strong> SS304</li>
+        <li><strong>Cutter Thickness:</strong> 15mm * 5 teeth</li>
+        <li><strong>Cutter Diameter:</strong> 200mm</li>
+      </ul>
+    </div>
+
+    <!-- Reviews Section -->
+    <div class="reviews-section">
+      <h2>Customer Reviews</h2>
+      <p>
+        "The dewatering machine has drastically reduced our waste disposal
+        costs, and it's very easy to maintain."
+      </p>
+      <p><strong>- A satisfied customer</strong></p>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+      <p>Contact us for more information on our dewatering machines!</p>
+      <a href="mailto:sales@dewateringmachines.com" class="contact-button"
+        >Contact Us</a
+      >
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p class="copyright">© Infed</p>
+      <nav>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </footer>
+
+    <script>
+      function handleDownload() {
+        // Collect input values
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+
+        // Ensure all fields are filled
+        if (!name || !email || !phone) {
+          alert("Please fill in all fields.");
+          return;
+        }
+
+        // WhatsApp Integration
+        const whatsappNumber = "+919519613735"; // Replace with actual WhatsApp number
+        const message = `Name: ${name}, Email: ${email}, Phone: ${phone}`;
+        const whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(
+          message
+        )}`;
+
+        // Open WhatsApp with the data
+        window.open(whatsappLink, "_blank");
+
+        // Trigger PDF download
+        const downloadLink = document.createElement("a");
+        downloadLink.href = "/PDF/MC1020 (1).pdf"; // Ensure this is the correct path to your PDF
+        downloadLink.download = "MC2108.pdf";
+        downloadLink.click();
+      }
+    </script>
+  </body>
+</html>

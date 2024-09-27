@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plastic Bailing Machine</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* General Body Styling */
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      /* Container Styling */
+      .container {
+        max-width: 1200px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Header Styling */
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .header h1 {
+        font-size: 3em;
+        color: #2c3e50;
+        font-weight: 600;
+      }
+
+      .header h3 {
+        font-size: 1.5em;
+        color: #2980b9;
+        margin-top: 10px;
+      }
+
+      /* Image Styling */
+      .project-image {
+        width: 40%;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.4s, box-shadow 0.4s;
+      }
+
+      .project-image:hover {
+        transform: scale(1.08);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Description Styling */
+      .description {
+        line-height: 1.7;
+        width: 60%;
+      }
+
+      .description p {
+        margin: 15px 0;
+      }
+
+      .description strong {
+        color: #2980b9;
+      }
+
+      /* Button Styling */
+      .download-button,
+      .contact-button {
+        display: inline-block;
+        padding: 12px 24px;
+        margin: 20px 0;
+        font-size: 1em;
+        color: #fff;
+        background-image: linear-gradient(to right, #6dd5fa, #2980b9);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: background-image 0.3s, transform 0.3s;
+      }
+
+      .download-button:hover,
+      .contact-button:hover {
+        background-image: linear-gradient(to right, #3498db, #6dd5fa);
+        transform: scale(1.05);
+      }
+
+      /* Intro Section */
+      .intro-section {
+        max-width: 1200px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 30px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .intro-section img {
+        width: 70%;
+        margin: 20px 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Features Section */
+      .features-section {
+        max-width: 1200px;
+        margin: 30px auto;
+        background: #fff;
+        padding: 30px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+
+      .features-list {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .features-list li {
+        margin: 15px 0;
+        font-size: 1.1em;
+        line-height: 1.6;
+      }
+
+      .features-list li::before {
+        content: "✔";
+        color: #2980b9;
+        margin-right: 10px;
+      }
+
+      /* Reviews Section */
+      .reviews-section {
+        max-width: 1200px;
+        margin: 30px auto;
+        background: #fff;
+        padding: 30px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+
+      .reviews-section p {
+        font-size: 1.2em;
+        margin: 15px 0;
+      }
+
+      .reviews-section strong {
+        color: #2980b9;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        margin-top: 50px;
+        text-align: center;
+      }
+
+      .contact-section p {
+        font-size: 1.3em;
+      }
+
+      .contact-section .contact-button {
+        margin-top: 10px;
+      }
+
+      /* Footer Styling */
+      footer {
+        background-color: #d4dbb1;
+        padding: 15px;
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      footer .copyright {
+        color: #2c3e50;
+        font-weight: 600;
+        font-size: 1.1em;
+      }
+
+      footer nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+      }
+
+      footer nav ul li a {
+        color: #2c3e50;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      footer nav ul li a:hover {
+        color: #2980b9;
+      }
+
+      /* Media Queries */
+      @media (max-width: 800px) {
+        .container {
+          flex-direction: column;
+          padding: 20px;
+        }
+
+        .project-image {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+
+        .description {
+          width: 100%;
+        }
+
+        .header h1 {
+          font-size: 2.2em;
+        }
+
+        .header h3 {
+          font-size: 1.2em;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Intro Section -->
+    <div class="intro-section">
+      <div class="header">
+        <h1>Plastic Bailing Machine</h1>
+      </div>
+
+      <img src="/images/PlasticBailingMachine.jpeg" alt="Dewatering Machine" />
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="container">
+      <img
+        src="/images/PlasticBailingMachine.jpeg"
+        alt="Project Image"
+        class="project-image"
+      />
+
+      <!--   Shredding Capacity:- 50 Kg/Hr.               Cutter Material:- “4140” High carbon alloy steel.                                                        Motor:- 1HP/3Phase Electric Motor. 			
+			
+			
+			
+			
+		 -->
+
+      <div class="description">
+        <p><strong>Specifications:</strong></p>
+        <ul>
+          <li><strong>Motor:</strong>10HP/3 Phase Electric Motor</li>
+          <li><strong>Material :</strong>Mild Steel</li>
+          <li><strong>Capacity:</strong> 500-600 Kg/hr (As per Garbage)</li>
+          <li><strong>Shredding Material:</strong>Dry And Wets Leaves</li>
+        </ul>
+        <a href="/PDF/GSM 75.pdf" class="download-button" download
+          >Download PDF</a
+        >
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-section">
+      <h2>Key Features</h2>
+      <ul class="features-list">
+        <li>
+          <strong>Efficiency:</strong> Highly efficient water removal from
+          materials.
+        </li>
+        <li>
+          <strong>Durability:</strong> Built with stainless steel for longevity.
+        </li>
+        <li>
+          <strong>Automation:</strong> Fully automated operation with low manual
+          intervention.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Reviews Section -->
+    <div class="reviews-section">
+      <h2>Customer Reviews</h2>
+      <p>
+        "The dewatering machine has drastically reduced our waste disposal
+        costs, and it's very easy to maintain."
+      </p>
+      <p>
+        <strong>- A satisfied customer</strong>
+      </p>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+      <p>Contact us for more information on our dewatering machines!</p>
+      <a href="mailto:sales@dewateringmachines.com" class="contact-button"
+        >Contact Us</a
+      >
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p class="copyright">© Infed</p>
+      <nav>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>
