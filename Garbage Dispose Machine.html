@@ -108,6 +108,30 @@
         color: #777;
         width: 100%;
       }
+      .view-button,
+      .download-button,
+      .contact-button {
+        display: inline-block;
+        padding: 12px 24px;
+        margin: 20px 0;
+        font-size: 1em;
+        color: #fff;
+        background-image: linear-gradient(to right, #6dd5fa, #2980b9);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: background-image 0.3s, transform 0.3s;
+      }
+
+      .view-button:hover,
+      .download-button:hover,
+      .contact-button:hover {
+        background-image: linear-gradient(to right, #3498db, #6dd5fa);
+        transform: scale(1.05);
+      }
       @media (max-width: 800px) {
         .container {
           flex-direction: column;
