@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Garbage Dispose Machine:</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f2f5;
+        color: #333;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 30px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+      .header h1 {
+        font-size: 2.5em;
+        color: #1a3e59;
+        margin-bottom: 20px;
+      }
+      .header p {
+        font-size: 1.2em;
+        color: #555;
+        margin-bottom: 30px;
+      }
+      .sub-products-list,
+      .products-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+      .sub-product,
+      .product {
+        padding: 15px 20px;
+        background-color: #e3f2fd;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 1.1em;
+        transition: all 0.4s ease;
+        border: 2px solid transparent;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        max-width: 250px;
+        flex: 1 1 calc(33.33% - 20px); /* Makes sure it wraps properly */
+      }
+      .sub-product:hover,
+      .product:hover {
+        background-color: #90caf9;
+        transform: scale(1.05);
+        border-color: #1a3e59;
+      }
+      .hidden {
+        display: none;
+      }
+      .product-details {
+        display: none;
+        background: #f5f5f5;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        margin-top: 30px;
+        text-align: left;
+      }
+      .product-details.active {
+        display: block;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .product-details h2 {
+        font-size: 2em;
+        color: #1a3e59;
+        margin-bottom: 20px;
+      }
+      .product-image {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        border-radius: 12px;
+        margin: 20px 0;
+        transition: transform 0.3s ease;
+      }
+      .product-image:hover {
+        transform: scale(1.05);
+      }
+      .product-description {
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #444;
+      }
+      .features-section ul,
+      .reviews-section ul {
+        padding-left: 20px;
+      }
+
+      /* Media queries for responsive design */
+      @media screen and (max-width: 992px) {
+        .header h1 {
+          font-size: 2em;
+        }
+        .sub-product,
+        .product {
+          flex: 1 1 calc(50% - 20px); /* Adjust product layout for tablet screens */
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .container {
+          padding: 20px;
+          margin: 20px auto;
+        }
+        .header h1 {
+          font-size: 1.8em;
+        }
+        .sub-product,
+        .product {
+          flex: 1 1 100%; /* Full width for mobile screens */
+        }
+        .product-details h2 {
+          font-size: 1.8em;
+        }
+        .product-image {
+          max-width: 100%; /* Ensure the image never overflows on smaller screens */
+        }
+        .features-list {
+          font-size: 1em;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .header h1 {
+          font-size: 1.5em;
+        }
+        .header p {
+          font-size: 1em;
+        }
+        .product-description {
+          font-size: 1em;
+        }
+        .product-image {
+          max-width: 100%; /* Make the image adjust to the screen */
+        }
+      }
+      .project-image,
+      img {
+        max-width: 100%; /* Images will not exceed the container's width */
+        height: auto; /* Maintains the image's aspect ratio */
+        display: block; /* Removes any extra spacing around the image */
+      }
+      footer {
+        background-color: #d4dbb1;
+        padding: 15px;
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      footer .copyright {
+        color: #2c3e50;
+        font-weight: 600;
+        font-size: 1.1em;
+      }
+
+      footer nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+      }
+
+      footer nav ul li a {
+        color: #2c3e50;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      footer nav ul li a:hover {
+        color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Garbage Dispose Machine:</h1>
+        <p>
+          Select a sub-product to explore the available products, and click to
+          see detailed information.
+        </p>
+      </div>
+
+      <!-- Sub-Product List -->
+      <div class="sub-products-list">
+        <div class="sub-product" onclick="showProducts('subProductOne')">
+          Domestic
+        </div>
+        <div class="sub-product" onclick="showProducts('subProductTwo')">
+       Commercial
+        </div>
+        <!-- <div class="sub-product" onclick="showProducts('subProductThree')">
+          Bio Medical Waste Shredder Machine
+        </div>
+        <div class="sub-product" onclick="showProducts('subProductFour')">
+          Cloth Waste Shredder Machine
+        </div>
+        <div class="sub-product" onclick="showProducts('subProductFive')">
+          Slauther house Waste Shredder
+        </div>
+        <div class="sub-product" onclick="showProducts('subProductSix')">
+          Plastic Waste Shredder
+        </div>
+        <div class="sub-product" onclick="showProducts('subProductSeven')">
+          RDF Shredder
+        </div> -->
+      </div>
+
+      <!-- Products under Sub-Product One -->
+      <div id="subProductOne" class="products-list hidden">
+        <div class="product" onclick="showProductDetails('productOne')">
+         Ruby
+        </div>
+        <div class="product" onclick="showProductDetails('productTwo')">
+          Remi
+        </div>
+        <div class="product" onclick="showProductDetails('productThree')">
+          Lily
+        </div>
+      </div>
+
+      <!-- Products under Sub-Product Two -->
+      <div id="subProductTwo" class="products-list hidden">
+        <div class="product" onclick="showProductDetails('productFour')">
+          GDU20
+        </div>
+        <div class="product" onclick="showProductDetails('productFive')">
+            GDU30
+        </div>
+        <div class="product" onclick="showProductDetails('productSix')">
+            GDU50
+        </div>
+        <div class="product" onclick="showProductDetails('productSeven')">
+            GDU75
+        </div>
+        <div class="product" onclick="showProductDetails('productEight')">
+            GDU100
+        </div>
+      </div>
+
+      <!-- <div id="subProductThree" class="products-list hidden">
+        <div class="product" onclick="showProductDetails('productSix')">
+          PSM-1524
+        </div>
+        <div class="product" onclick="showProductDetails('productSeven')">
+          PSM-1520
+        </div>
+        <div class="product" onclick="showProductDetails('productEight')">
+          PSM-1530
+        </div>
+      </div> -->
+      <!-- <div id="subProductFour" class="products-list hidden">
+        <div class="product" onclick="showProductDetails('productNine')">
+          CSM-1524
+        </div>
+        <div class="product" onclick="showProductDetails('productTen')">
+          CSM-1520
+        </div>
+        <div class="product" onclick="showProductDetails('productEleven')">
+          CSM-1530
+        </div>
+      </div> -->
+      <!-- <div id="subProductFive" class="products-list hidden">
+        <div class="product" onclick="showProductDetails('productTwelve')">
+          SWS-2320(CS)
+        </div>
+        <div class="product" onclick="showProductDetails('productThirteen')">
+          SWS-2340(CS)
+        </div>
+      </div> -->
+      <!-- <div id="subProductSix" class="products-list hidden">
+        <div class="product" onclick="showProductDetails('productFourteen')">
+          PSM-1524
+        </div>
+        <div class="product" onclick="showProductDetails('productFifteen')">
+          PSM-1520
+        </div>
+        <div class="product" onclick="showProductDetails('productSixteen')">
+          PSM-1530
+        </div>
+      </div> -->
+      <div id="subProductSeven" class="products-list hidden"></div>
+        <!-- <div class="product" onclick="showProductDetails('productSeventeen')">
+            RDF-2428
+
+        </div> -->
+        <!-- <div class="product" onclick="showProductDetails('productFifteen')">
+          PSM-1520
+        </div>
+        <div class="product" onclick="showProductDetails('productSixteen')">
+          PSM-1530
+        </div> -->
+      </div>
+      <!-- Product Details Section -->
+      <div id="productOne" class="product-details">
+       
+        <div class="intro-section">
+            <div class="header">
+              <h1>Ruby (Garbage Dispose Machine)</h1>
+            </div>
+      
+            <img src="/images/Ruby.jpeg" alt="Ruby (Garbage Dispose Machine)" />
+          </div>
+      
+          <!-- Main Content Section -->
+          <div class="container">
+            <!-- <img
+              src="/images/Ruby.jpeg"
+              alt="Project Image"
+              class="project-image"
+            /> -->
+      
+            <!-- "Shaft : Twin Shaft Grinder Mechanism 
+            Cutter Material : ‘4140’
+            High carbon alloy steel
+           Shredding Material: Organic Waste    Motor Capacity:- 2HP/3 Phase
+           Shredding Capacity: 250-300kg/hr
+           Gearbox Size:- 75 (Worm Gearbox)"			 -->
+      
+            <div class="description">
+              <p><strong>Specifications:</strong></p>
+              <ul>
+                <li><strong>Motor Capacity:</strong>0.88hp/660w</li>
+                <li><strong>Orientation:</strong>Vertical</li>
+                <li><strong>Grinding Chamber Capacity:</strong>1200ml SS Flange.</li>
+                <li>
+                  <strong>Material Crushed:</strong> Unwanted Food, Bones, Vegetables
+                  peels, and any organic food waste.
+                </li>
+                <li><strong>Size:</strong>210*210*410mm, 220 Voltage 50 hz</li>
+                <li><strong>Color:</strong>Blue</li>
+                <li><strong>Switch:</strong>Air Switch (Easy Installation)</li>
+              </ul>
+              <a
+                href="/PDF/MC8030-Shredder Machine on M.S Plate - Copy.pdf"
+                class="download-button"
+                download
+                >Download PDF</a
+              >
+            </div>
+          </div>
+      
+          <!-- Features Section -->
+          <div class="features-section">
+            <h2>Key Features</h2>
+            <ul class="features-list">
+              <li>
+                <strong>Efficiency:</strong> Highly efficient water removal from
+                materials.
+              </li>
+              <li>
+                <strong>Durability:</strong> Built with stainless steel for longevity.
+              </li>
+              <li>
+                <strong>Automation:</strong> Fully automated operation with low manual
+                intervention.
+              </li>
+            </ul>
+          </div>
+      
+          <!-- Reviews Section -->
+          <div class="reviews-section">
+            <h2>Customer Reviews</h2>
+            <p>
+              "The dewatering machine has drastically reduced our waste disposal
+              costs, and it's very easy to maintain."
+            </p>
+            <p>
+              <strong>- A satisfied customer</strong>
+            </p>
+          </div>
+      
+          <!-- Contact Section -->
+          <div class="contact-section">
+            <p>Contact us for more information on our dewatering machines!</p>
+            <a href="mailto:sales@dewateringmachines.com" class="contact-button"
+              >Contact Us</a
+            >
+          </div>
+      </div>
+
+      <div id="productTwo" class="product-details">
+        <div class="intro-section">
+            <div class="header">
+              <h1>Remi (Garbage Dispose Machine)</h1>
+            </div>
+      
+            <img src="/images/Remi.jpeg" alt="Ruby (Garbage Dispose Machine)" />
+          </div>
+      
+          <!-- Main Content Section -->
+          <div class="container">
+            <!-- <img src="/images/Remi.jpeg" alt="Project Image" class="project-image" /> -->
+      
+            <!-- "Shaft : Twin Shaft Grinder Mechanism 
+            Cutter Material : ‘4140’
+            High carbon alloy steel
+           Shredding Material: Organic Waste    Motor Capacity:- 2HP/3 Phase
+           Shredding Capacity: 250-300kg/hr
+           Gearbox Size:- 75 (Worm Gearbox)"			 -->
+      
+            <div class="description">
+              <p><strong>Specifications:</strong></p>
+              <ul>
+                <li><strong>Motor Capacity:</strong>0.61hp/460w</li>
+                <li><strong>Orientation:</strong>Vertical</li>
+                <li><strong>Grinding Chamber Capacity:</strong>1100ml SS Flange.</li>
+                <li>
+                  <strong>Material Crushed:</strong> Unwanted Food, Bones, Vegetables
+                  peels, and any organic food waste.
+                </li>
+                <li><strong>Size:</strong>185*185*390mm, 220 Voltage 50 hz</li>
+                <li><strong>Color:</strong>Ruby Red</li>
+                <li><strong>Switch:</strong>Air Switch (Easy Installation)</li>
+              </ul>
+              <a
+                href="/PDF/MC8030-Shredder Machine on M.S Plate - Copy.pdf"
+                class="download-button"
+                download
+                >Download PDF</a
+              >
+            </div>
+          </div>
+      
+          <!-- Features Section -->
+          <div class="features-section">
+            <h2>Key Features</h2>
+            <ul class="features-list">
+              <li>
+                <strong>Efficiency:</strong> Highly efficient water removal from
+                materials.
+              </li>
+              <li>
+                <strong>Durability:</strong> Built with stainless steel for longevity.
+              </li>
+              <li>
+                <strong>Automation:</strong> Fully automated operation with low manual
+                intervention.
+              </li>
+            </ul>
+          </div>
+      
+          <!-- Reviews Section -->
+          <div class="reviews-section">
+            <h2>Customer Reviews</h2>
+            <p>
+              "The dewatering machine has drastically reduced our waste disposal
+              costs, and it's very easy to maintain."
+            </p>
+            <p>
+              <strong>- A satisfied customer</strong>
+            </p>
+          </div>
+      
+          <!-- Contact Section -->
+          <div class="contact-section">
+            <p>Contact us for more information on our dewatering machines!</p>
+            <a href="mailto:sales@dewateringmachines.com" class="contact-button"
+              >Contact Us</a
+            >
+          </div>
+      </div>
+
+      <div id="productThree" class="product-details">
+        <div class="intro-section">
+            <div class="header">
+              <h1>Lily (Garbage Dispose Machine)</h1>
+            </div>
+      
+            <img src="/images/Lily.jpeg" alt="Ruby (Garbage Dispose Machine)" />
+          </div>
+      
+          <!-- Main Content Section -->
+          <div class="container">
+            <img src="/images/Lily.jpeg" alt="Project Image" class="project-image" />
+      
+            <!-- "Shaft : Twin Shaft Grinder Mechanism 
+            Cutter Material : ‘4140’
+            High carbon alloy steel
+           Shredding Material: Organic Waste    Motor Capacity:- 2HP/3 Phase
+           Shredding Capacity: 250-300kg/hr
+           Gearbox Size:- 75 (Worm Gearbox)"			 -->
+      
+            <div class="description">
+              <p><strong>Specifications:</strong></p>
+              <ul>
+                <li><strong>Motor Capacity:</strong>1hp/760w</li>
+                <li><strong>Orientation:</strong>Vertical</li>
+                <li><strong>Grinding Chamber Capacity:</strong>1200ml SS Flange.</li>
+                <li>
+                  <strong>Material Crushed:</strong> Unwanted Food, Bones, Vegetables
+                  peels, and any organic food waste.
+                </li>
+                <li><strong>Size:</strong>220*220*410mm, 220 Voltage 50 hz</li>
+                <li><strong>Color:</strong>Golden</li>
+                <li><strong>Switch:</strong>Air Switch (Easy Installation)</li>
+              </ul>
+              <a
+                href="/PDF/MC8030-Shredder Machine on M.S Plate - Copy.pdf"
+                class="download-button"
+                download
+                >Download PDF</a
+              >
+            </div>
+          </div>
+      
+          <!-- Features Section -->
+          <div class="features-section">
+            <h2>Key Features</h2>
+            <ul class="features-list">
+              <li>
+                <strong>Efficiency:</strong> Highly efficient water removal from
+                materials.
+              </li>
+              <li>
+                <strong>Durability:</strong> Built with stainless steel for longevity.
+              </li>
+              <li>
+                <strong>Automation:</strong> Fully automated operation with low manual
+                intervention.
+              </li>
+            </ul>
+          </div>
+      
+          <!-- Reviews Section -->
+          <div class="reviews-section">
+            <h2>Customer Reviews</h2>
+            <p>
+              "The dewatering machine has drastically reduced our waste disposal
+              costs, and it's very easy to maintain."
+            </p>
+            <p>
+              <strong>- A satisfied customer</strong>
+            </p>
+          </div>
+      
+          <!-- Contact Section -->
+          <div class="contact-section">
+            <p>Contact us for more information on our dewatering machines!</p>
+            <a href="mailto:sales@dewateringmachines.com" class="contact-button"
+              >Contact Us</a
+            >
+          </div>
+      </div>
+
+      <div id="productFour" class="product-details">
+        <div class="intro-section">
+            <div class="header">
+              <h1>GDU20 (Garbage Dispose Machine)</h1>
+            </div>
+      
+            <img src="/images/GDU20.jpeg" alt="Ruby (Garbage Dispose Machine)" />
+          </div>
+      
+          <!-- Main Content Section -->
+          <div class="container">
+          
+      
+            <!-- "Shaft : Twin Shaft Grinder Mechanism 
+            Cutter Material : ‘4140’
+            High carbon alloy steel
+           Shredding Material: Organic Waste    Motor Capacity:- 2HP/3 Phase
+           Shredding Capacity: 250-300kg/hr
+           Gearbox Size:- 75 (Worm Gearbox)"			 -->
+      
+            <div class="description">
+              <p><strong>Specifications:</strong></p>
+              <ul>
+                <li><strong>Motor Capacity:</strong>2hp</li>
+                <li><strong>Motor Make:</strong>Hindustan/BEM/Remi</li>
+                <li><strong>Orientation:</strong>vertical</li>
+                <li><strong>Rotate Cutter:</strong> SS304</li>
+                <li><strong>Stationary Cutter:</strong>4140</li>
+                <li>
+                  <strong>Crushing Capacity:</strong>75-100 Kg/hr. (As per garbage )
+                </li>
+                <li><strong>Material Crushed:</strong>Food Waste/Organic Waste</li>
+                <li><strong>Body and Hopper:</strong>SS304</li>
+                <li><strong>Color:</strong>Green</li>
+              </ul>
+              <a href="/PDF/GDU-20 -Model.pdf" class="download-button" download
+                >Download PDF</a
+              >
+            </div>
+          </div>
+      
+          <!-- Features Section -->
+          <div class="features-section">
+            <h2>Key Features</h2>
+            <ul class="features-list">
+              <li>
+                <strong>Efficiency:</strong> Highly efficient water removal from
+                materials.
+              </li>
+              <li>
+                <strong>Durability:</strong> Built with stainless steel for longevity.
+              </li>
+              <li>
+                <strong>Automation:</strong> Fully automated operation with low manual
+                intervention.
+              </li>
+            </ul>
+          </div>
+      
+          <!-- Reviews Section -->
+          <div class="reviews-section">
+            <h2>Customer Reviews</h2>
+            <p>
+              "The dewatering machine has drastically reduced our waste disposal
+              costs, and it's very easy to maintain."
+            </p>
+            <p>
+              <strong>- A satisfied customer</strong>
+            </p>
+          </div>
+      
+          <!-- Contact Section -->
+          <div class="contact-section">
+            <p>Contact us for more information on our dewatering machines!</p>
+            <a href="mailto:sales@dewateringmachines.com" class="contact-button"
+              >Contact Us</a
+            >
+          </div>
+      </div>
+
+      <div id="productFive" class="product-details">
+        <div class="intro-section">
+            <div class="header">
+              <h1>GDU30 (Garbage Dispose Machine)</h1>
+            </div>
+      
+            <img src="/images/GDU30.jpeg" alt="Ruby (Garbage Dispose Machine)" />
+          </div>
+      
+          <!-- Main Content Section -->
+          <div class="container">
+      
+            <!-- "Shaft : Twin Shaft Grinder Mechanism 
+            Cutter Material : ‘4140’
+            High carbon alloy steel
+           Shredding Material: Organic Waste    Motor Capacity:- 2HP/3 Phase
+           Shredding Capacity: 250-300kg/hr
+           Gearbox Size:- 75 (Worm Gearbox)"			 -->
+      
+            <div class="description">
+              <p><strong>Specifications:</strong></p>
+              <ul>
+                <li><strong>Motor Capacity:</strong>2hp</li>
+                <li><strong>Motor Make:</strong>Hindustan/BEM/Remi</li>
+                <li><strong>Orientation:</strong>vertical</li>
+                <li><strong>Rotate Cutter:</strong> SS304</li>
+                <li><strong>Stationary Cutter:</strong>4140</li>
+                <li>
+                  <strong>Crushing Capacity:</strong>75-100 Kg/hr. (As per garbage )
+                </li>
+                <li><strong>Material Crushed:</strong>Food Waste/Organic Waste</li>
+                <li><strong>Body and Hopper:</strong>SS304</li>
+                <li><strong>Color:</strong>Green</li>
+              </ul>
+              <a href="/PDF/GDU-30.pdf" class="download-button" download
+                >Download PDF</a
+              >
+            </div>
+          </div>
+      
+          <!-- Features Section -->
+          <div class="features-section">
+            <h2>Key Features</h2>
+            <ul class="features-list">
+              <li>
+                <strong>Efficiency:</strong> Highly efficient water removal from
+                materials.
+              </li>
+              <li>
+                <strong>Durability:</strong> Built with stainless steel for longevity.
+              </li>
+              <li>
+                <strong>Automation:</strong> Fully automated operation with low manual
+                intervention.
+              </li>
+            </ul>
+          </div>
+      
+          <!-- Reviews Section -->
+          <div class="reviews-section">
+            <h2>Customer Reviews</h2>
+            <p>
+              "The dewatering machine has drastically reduced our waste disposal
+              costs, and it's very easy to maintain."
+            </p>
+            <p>
+              <strong>- A satisfied customer</strong>
+            </p>
+          </div>
+      
+          <!-- Contact Section -->
+          <div class="contact-section">
+            <p>Contact us for more information on our dewatering machines!</p>
+            <a href="mailto:sales@dewateringmachines.com" class="contact-button"
+              >Contact Us</a
+            >
+          </div>
+      </div>
+
+      <div id="productSix" class="product-details">
+        <h2>PSM-1524
+        </h2>
+        <div class="intro-section">
+          <div class="header">
+            <h1>Dewatering Machine</h1>
+            <h3>Industrial Dewatering for Efficient Waste Processing</h3>
+          </div>
+          <p>
+            A dewatering machine is designed to remove water from various types
+            of solid materials, including industrial sludge, food waste,
+            agricultural by-products, and more. These machines are essential for
+            waste management and material processing.
+          </p>
+          <img src="/images/4.png" alt="Dewatering Machine" />
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="container">
+          <img
+            src="/images/dewatering.jpg"
+            alt="Project Image"
+            class="project-image"
+          />
+          <div class="description">
+            <p><strong>Specifications:</strong></p>
+            <ul>
+              <li><strong>Motor Power:</strong> 3-15 HP</li>
+              <li><strong>Processing Capacity:</strong> 300-500 kg/hr</li>
+              <li><strong>Material:</strong> High-Grade Stainless Steel</li>
+              <li>
+                <strong>Applications:</strong> Organic Waste, Industrial Sludge
+              </li>
+            </ul>
+          </div>
+          <h2>Features:</h2>
+          <ul class="features-list">
+            <li>Durable and corrosion-resistant material</li>
+            <li>High dewatering efficiency</li>
+            <li>Energy-saving operation</li>
+            <li>Customizable configurations</li>
+          </ul>
+        </div>
+
+        <div class="features-section">
+          <h2>Product Features:</h2>
+          <ul>
+            <li>Efficient dewatering mechanism</li>
+            <li>Low maintenance cost</li>
+            <li>Eco-friendly operation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="productSeven" class="product-details">
+        <h2>PSM-1520
+        </h2>
+        <div class="intro-section">
+          <div class="header">
+            <h1>Dewatering Machine</h1>
+            <h3>Industrial Dewatering for Efficient Waste Processing</h3>
+          </div>
+          <p>
+            A dewatering machine is designed to remove water from various types
+            of solid materials, including industrial sludge, food waste,
+            agricultural by-products, and more. These machines are essential for
+            waste management and material processing.
+          </p>
+          <img src="/images/4.png" alt="Dewatering Machine" />
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="container">
+          <img
+            src="/images/dewatering.jpg"
+            alt="Project Image"
+            class="project-image"
+          />
+          <div class="description">
+            <p><strong>Specifications:</strong></p>
+            <ul>
+              <li><strong>Motor Power:</strong> 3-15 HP</li>
+              <li><strong>Processing Capacity:</strong> 300-500 kg/hr</li>
+              <li><strong>Material:</strong> High-Grade Stainless Steel</li>
+              <li>
+                <strong>Applications:</strong> Organic Waste, Industrial Sludge
+              </li>
+            </ul>
+          </div>
+          <h2>Features:</h2>
+          <ul class="features-list">
+            <li>Durable and corrosion-resistant material</li>
+            <li>High dewatering efficiency</li>
+            <li>Energy-saving operation</li>
+            <li>Customizable configurations</li>
+          </ul>
+        </div>
+
+        <div class="features-section">
+          <h2>Product Features:</h2>
+          <ul>
+            <li>Efficient dewatering mechanism</li>
+            <li>Low maintenance cost</li>
+            <li>Eco-friendly operation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="productEight" class="product-details">
+        <h2>PSM-1530
+        </h2>
+        <div class="intro-section">
+          <div class="header">
+            <h1>Dewatering Machine</h1>
+            <h3>Industrial Dewatering for Efficient Waste Processing</h3>
+          </div>
+          <p>
+            A dewatering machine is designed to remove water from various types
+            of solid materials, including industrial sludge, food waste,
+            agricultural by-products, and more. These machines are essential for
+            waste management and material processing.
+          </p>
+          <img src="/images/4.png" alt="Dewatering Machine" />
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="container">
+          <img
+            src="/images/dewatering.jpg"
+            alt="Project Image"
+            class="project-image"
+          />
+          <div class="description">
+            <p><strong>Specifications:</strong></p>
+            <ul>
+              <li><strong>Motor Power:</strong> 3-15 HP</li>
+              <li><strong>Processing Capacity:</strong> 300-500 kg/hr</li>
+              <li><strong>Material:</strong> High-Grade Stainless Steel</li>
+              <li>
+                <strong>Applications:</strong> Organic Waste, Industrial Sludge
+              </li>
+            </ul>
+          </div>
+          <h2>Features:</h2>
+          <ul class="features-list">
+            <li>Durable and corrosion-resistant material</li>
+            <li>High dewatering efficiency</li>
+            <li>Energy-saving operation</li>
+            <li>Customizable configurations</li>
+          </ul>
+        </div>
+
+        <div class="features-section">
+          <h2>Product Features:</h2>
+          <ul>
+            <li>Efficient dewatering mechanism</li>
+            <li>Low maintenance cost</li>
+            <li>Eco-friendly operation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showProducts(subProductId) {
+        const subProducts = document.querySelectorAll(".products-list");
+        subProducts.forEach((subProduct) => {
+          subProduct.classList.add("hidden");
+        });
+        document.getElementById(subProductId).classList.remove("hidden");
+      }
+
+      function showProductDetails(productId) {
+        const products = document.querySelectorAll(".product-details");
+        products.forEach((product) => {
+          product.classList.remove("active");
+        });
+        document.getElementById(productId).classList.add("active");
+      }
+    </script>
+    <footer>
+      <p class="copyright">© Infed</p>
+      <nav>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>
