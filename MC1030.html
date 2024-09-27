@@ -282,29 +282,45 @@
           <li><strong>Shredding Material:</strong> Organic Waste.</li>
           <li><strong>Motor Capacity:</strong> 2HP/3. phase</li>
         </ul>
-        <a href="#" class="download-button" onclick="downloadMultiplePDFs()"
-          >Download PDF</a
-        >
+        <a href="/PDF/Bio Mining Shredder Machine.pdf class="view-button" target="_blank"
+        >View PDF</a
+      >
+
+      <!-- Download Button -->
+      <button class="download-button" onclick="handleDownload()">
+        Download PDF
+      </button>
       </div>
     </div>
 
     <script>
-      function downloadMultiplePDFs() {
-        // Create two anchor elements to download both PDFs
-        const link1 = document.createElement("a");
-        const link2 = document.createElement("a");
+      function handleDownload() {
+        // Collect input values
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
 
-        // Set the URLs of the PDFs
-        link1.href = "/PDF/MC100-Series1.pdf";
-        link2.href = "PDF/MC1030-Shredder Machine on M.S Plate - Copy.pdf";
+        // Ensure all fields are filled
+        if (!name || !email || !phone) {
+          alert("Please fill in all fields.");
+          return;
+        }
 
-        // Set the download attribute to automatically download the files
-        link1.download = "MC100-Series1.pdf";
-        link2.download = "MC1030-Shredder Machine on M.S Plate - Copy.pdf";
+        // WhatsApp Integration
+        const whatsappNumber = "+919519613735"; // Replace with actual WhatsApp number
+        const message = `Name: ${name}, Email: ${email}, Phone: ${phone}`;
+        const whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(
+          message
+        )}`;
 
-        // Programmatically click the links to trigger the downloads
-        link1.click();
-        link2.click();
+        // Open WhatsApp with the data
+        window.open(whatsappLink, "_blank");
+
+        // Trigger PDF download
+        const downloadLink = document.createElement("a");
+        downloadLink.href = "/PDF/MC1020 (1).pdf"; // Ensure this is the correct path to your PDF
+        downloadLink.download = "MC2108.pdf";
+        downloadLink.click();
       }
     </script>
 
