@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GDU30 (Garbage Dispose Machine)</title>
+    <title>GDU30</title>
 
     <!-- Google Fonts -->
     <link
@@ -243,6 +243,19 @@
         background-image: linear-gradient(to right, #3498db, #6dd5fa);
         transform: scale(1.05);
       }
+      .input-container {
+        margin: 20px 0;
+      }
+
+      .input-container input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        font-size: 1em;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
+
       /* Media Queries */
       @media (max-width: 800px) {
         .container {
@@ -274,10 +287,10 @@
     <!-- Intro Section -->
     <div class="intro-section">
       <div class="header">
-        <h1>GDU30 (Garbage Dispose Machine)</h1>
+        <h1>GDU30</h1>
       </div>
 
-      <!-- <img src="/images/GDU30.jpeg" alt="Ruby (Garbage Dispose Machine)" /> -->
+      <!-- <img src="/images/MC8020.jpeg" alt="Dewatering Machine" /> -->
     </div>
 
     <!-- Main Content Section -->
@@ -286,7 +299,7 @@
 
       <!-- "Shaft : Twin Shaft Grinder Mechanism 
       Cutter Material : ‘4140’
-      High carbon alloy steel
+      High carbaon alloy steel
      Shredding Material: Organic Waste    Motor Capacity:- 2HP/3 Phase
      Shredding Capacity: 250-300kg/hr
      Gearbox Size:- 75 (Worm Gearbox)"			 -->
@@ -294,18 +307,28 @@
       <div class="description">
         <p><strong>Specifications:</strong></p>
         <ul>
-          <li><strong>Motor Capacity:</strong>2hp</li>
-          <li><strong>Motor Make:</strong>Hindustan/BEM/Remi</li>
-          <li><strong>Orientation:</strong>vertical</li>
-          <li><strong>Rotate Cutter:</strong> SS304</li>
-          <li><strong>Stationary Cutter:</strong>4140</li>
+          <li><strong>Shaft:</strong> Twin Shaft Grinder Mechanism.</li>
           <li>
-            <strong>Crushing Capacity:</strong>75-100 Kg/hr. (As per garbage )
+            <strong>Cutter Material :</strong> ‘4140’. High carbon alloy steel
           </li>
-          <li><strong>Material Crushed:</strong>Food Waste/Organic Waste</li>
-          <li><strong>Body and Hopper:</strong>SS304</li>
-          <li><strong>Color:</strong>Green</li>
+          <li><strong>Shredding Material:</strong> Organic Waste.</li>
+          <li><strong>Motor Capacity:</strong> 5HP/3. phase</li>
+          <li>
+            <strong>Shredding Capacity:</strong> 400-500kg/hr (As per garbage)
+          </li>
+          <li><strong>Gearbox Size:</strong> 110(worm gearbox)</li>
         </ul>
+
+        <div class="input-container">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Your Phone Number"
+            required
+          />
+        </div>
         <a
           href="/PDF/Bio Mining Shredder Machine.pdf"
           class="view-button"

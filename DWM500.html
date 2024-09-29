@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CS1030</title>
+    <title>DWM500</title>
 
     <!-- Google Fonts -->
-    <linkS
+    <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
@@ -19,36 +19,6 @@
         padding: 0;
         background-color: #f4f4f9;
         color: #333;
-      }
-
-      /* Intro Section Centered */
-      .intro-section {
-        max-width: 1200px;
-        margin: 40px auto;
-        background: #fff;
-        padding: 30px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        text-align: center;
-      }
-
-      .intro-section h1 {
-        font-size: 3em;
-        color: #2c3e50;
-        font-weight: 600;
-      }
-
-      .intro-section img {
-        width: 50%;
-        height: auto;
-        margin: 20px 0;
-        border-radius: 10px;
-        transition: transform 0.4s, box-shadow 0.4s;
-      }
-
-      .intro-section img:hover {
-        transform: scale(1.08);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       }
 
       /* Container Styling */
@@ -68,6 +38,24 @@
       .container:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Header Styling */
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .header h1 {
+        font-size: 3em;
+        color: #2c3e50;
+        font-weight: 600;
+      }
+
+      .header h3 {
+        font-size: 1.5em;
+        color: #2980b9;
+        margin-top: 10px;
       }
 
       /* Image Styling */
@@ -97,22 +85,7 @@
         color: #2980b9;
       }
 
-      /* Input Fields Styling */
-      .input-container {
-        margin: 20px 0;
-      }
-
-      .input-container input {
-        width: 100%;
-        padding: 10px;
-        margin: 5px 0;
-        font-size: 1em;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-      }
-
       /* Button Styling */
-      .view-button,
       .download-button,
       .contact-button {
         display: inline-block;
@@ -130,11 +103,28 @@
         transition: background-image 0.3s, transform 0.3s;
       }
 
-      .view-button:hover,
       .download-button:hover,
       .contact-button:hover {
         background-image: linear-gradient(to right, #3498db, #6dd5fa);
         transform: scale(1.05);
+      }
+
+      /* Intro Section */
+      .intro-section {
+        max-width: 1200px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 30px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .intro-section img {
+        width: 70%;
+        margin: 20px 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       }
 
       /* Features Section */
@@ -253,6 +243,19 @@
         background-image: linear-gradient(to right, #3498db, #6dd5fa);
         transform: scale(1.05);
       }
+      .input-container {
+        margin: 20px 0;
+      }
+
+      .input-container input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        font-size: 1em;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
+
       /* Media Queries */
       @media (max-width: 800px) {
         .container {
@@ -281,59 +284,38 @@
   </head>
 
   <body>
-    <!-- Intro Section Centered -->
+    <!-- Intro Section -->
     <div class="intro-section">
-      <h1>CS1030</h1>
-      <!-- <img src="/images/CS1030.jpeg" alt="Dewatering Machine" /> -->
+      <div class="header">
+        <h1>DWM500</h1>
+      </div>
+
+      <!-- <img src="/images/PlasticBailingMachine.jpeg" alt="Dewatering Machine" /> -->
     </div>
 
     <!-- Main Content Section -->
     <div class="container">
       <img
-        src="/images/CS1030.jpeg"
+        src="/images/DMW500.jpeg"
         alt="Project Image"
         class="project-image"
       />
 
-      <!-- "Cutter Material : “4140” Hardened and ground
- High carbon Alloy Steel
- Impeller : “ D2 ” Alloy Metal
- Incline Orientation
- Suitable for Bottle [i.e Beer Bottle, Rum Bottle etc]
- Motor : 2 HP/3 Phase Electric Motor
-Machine Body : Mild Steel Fabrication
- Input Size of Hopper : φ150mm
- Output : Convert into Sand form,
- Collected in Air Filter Cloth bag
- Capacity : 720 Bottle/Hr
- Machine Size:- 430mm(L) X 255mm(W) X 1200mm(H)
- Machine Weight : 125kg"			 -->
+      <!--   Shredding Capacity:- 50 Kg/Hr.               Cutter Material:- “4140” High carbon alloy steel.                                                        Motor:- 1HP/3Phase Electric Motor. 			
+			
+			
+			
+			
+		 -->
 
       <div class="description">
         <p><strong>Specifications:</strong></p>
         <ul>
-          <li>
-            <strong>Cutter Material :</strong>“4140” Hardened and ground High
-            carbon Alloy Steel
-          </li>
-          <li>
-            <strong> Impeller :</strong> “ D2 ” Alloy Metal Incline Orientation
-            Suitable for Bottle [i.e Beer Bottle, Rum Bottle etc]
-          </li>
-          <li><strong>Motor :</strong>5 HP/3 Phase Electric Motor</li>
-          <!-- <li><strong>No Cutter Stack:</strong> Retightening required high flow side rail.</li> -->
-          <li><strong>Power Consumption:</strong>1.6 Units per hour</li>
-          <li><strong>Input Size of Hopper:</strong>φ150mm</li>
-          <li>
-            <strong>Output:</strong>Convert into Sand form, Collected in Air
-            Filter Cloth bag
-          </li>
-          <li><strong>Capacity:</strong>720 Bottle/Hr</li>
-          <li><strong>Machine Size:</strong>430mm(L) X 255mm(W) X 1200mm(H)</li>
-          <li><strong>Machine Weight:</strong>125kg</li>
+          <li><strong>Motor:</strong>10HP/3 Phase Electric Motor</li>
+          <li><strong>Material :</strong>Mild Steel</li>
+          <li><strong>Capacity:</strong> 500-600 Kg/hr (As per Garbage)</li>
+          <li><strong>Shredding Material:</strong>Dry And Wets Leaves</li>
         </ul>
-
-        <!-- Input Fields -->
         <div class="input-container">
           <input type="text" id="name" placeholder="Your Name" required />
           <input type="email" id="email" placeholder="Your Email" required />
@@ -344,19 +326,18 @@ Machine Body : Mild Steel Fabrication
             required
           />
         </div>
-
-        <!-- View PDF Button -->
         <a
-          href="/PDF/Bio Mining Shredder Machine.pdf"
-          class="view-button"
-          target="_blank"
-          >View PDF</a
-        >
+        href="/PDF/Bio Mining Shredder Machine.pdf"
+        class="view-button"
+        target="_blank"
+        >View PDF</a
+      >
 
-        <!-- Download Button -->
-        <button class="download-button" onclick="handleDownload()">
-          Download PDF
-        </button>
+      <!-- Download Button -->
+      <button class="download-button" onclick="handleDownload()">
+        Download PDF
+      </button>
+    </div>
       </div>
     </div>
 
@@ -364,16 +345,17 @@ Machine Body : Mild Steel Fabrication
     <div class="features-section">
       <h2>Key Features</h2>
       <ul class="features-list">
-        <li><strong>Shredding Material:</strong> Aluminum Can</li>
         <li>
-          <strong>Shredding Machine Type:</strong> Double Shaft Suitable for 7.5
-          hp motor *2 nos. Helical gearbox * 2 nos.
+          <strong>Efficiency:</strong> Highly efficient water removal from
+          materials.
         </li>
-        <li><strong>Shredding Capacity:</strong> 700 to 900 can/hr</li>
-        <li><strong>Input Size:</strong> 450mm* 395mm</li>
-        <li><strong>Cutter:</strong> SS304</li>
-        <li><strong>Cutter Thickness:</strong> 15mm * 5 teeth</li>
-        <li><strong>Cutter Diameter:</strong> 200mm</li>
+        <li>
+          <strong>Durability:</strong> Built with stainless steel for longevity.
+        </li>
+        <li>
+          <strong>Automation:</strong> Fully automated operation with low manual
+          intervention.
+        </li>
       </ul>
     </div>
 
@@ -384,7 +366,9 @@ Machine Body : Mild Steel Fabrication
         "The dewatering machine has drastically reduced our waste disposal
         costs, and it's very easy to maintain."
       </p>
-      <p><strong>- A satisfied customer</strong></p>
+      <p>
+        <strong>- A satisfied customer</strong>
+      </p>
     </div>
 
     <!-- Contact Section -->
@@ -406,9 +390,7 @@ Machine Body : Mild Steel Fabrication
           <li><a href="/contact">Contact Us</a></li>
         </ul>
       </nav>
-    </footer>
-
-    <script>
+    </footer> <script>
       function handleDownload() {
         // Collect input values
         const name = document.getElementById("name").value;

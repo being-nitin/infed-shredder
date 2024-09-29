@@ -243,7 +243,18 @@
         background-image: linear-gradient(to right, #3498db, #6dd5fa);
         transform: scale(1.05);
       }
+      .input-container {
+        margin: 20px 0;
+      }
 
+      .input-container input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        font-size: 1em;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
       /* Media Queries */
       @media (max-width: 800px) {
         .container {
@@ -302,6 +313,17 @@
           <!-- <li><strong>Shredding Material:</strong> Organic Waste.</li> -->
           <li><strong>Motor:</strong> 1HP/3. phase Electric Motor</li>
         </ul>
+
+        <div class="input-container">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Your Phone Number"
+            required
+          />
+        </div>
         <a
           href="/PDF/Bio Mining Shredder Machine.pdf"
           class="view-button"

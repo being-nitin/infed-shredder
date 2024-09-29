@@ -21,36 +21,6 @@
         color: #333;
       }
 
-      /* Intro Section Centered */
-      .intro-section {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 50px;
-        min-height: 100vh; /* Take full viewport height */
-      }
-
-      .intro-section h1 {
-        font-size: 3em;
-        color: #2c3e50;
-        font-weight: 600;
-      }
-
-      .intro-section img {
-        width: 50%;
-        height: auto;
-        margin: 20px 0;
-        border-radius: 10px;
-        transition: transform 0.4s, box-shadow 0.4s;
-      }
-
-      .intro-section img:hover {
-        transform: scale(1.08);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      }
-
       /* Container Styling */
       .container {
         max-width: 1200px;
@@ -68,6 +38,24 @@
       .container:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Header Styling */
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .header h1 {
+        font-size: 3em;
+        color: #2c3e50;
+        font-weight: 600;
+      }
+
+      .header h3 {
+        font-size: 1.5em;
+        color: #2980b9;
+        margin-top: 10px;
       }
 
       /* Image Styling */
@@ -97,22 +85,7 @@
         color: #2980b9;
       }
 
-      /* Input Fields Styling */
-      .input-container {
-        margin: 20px 0;
-      }
-
-      .input-container input {
-        width: 100%;
-        padding: 10px;
-        margin: 5px 0;
-        font-size: 1em;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-      }
-
       /* Button Styling */
-      .view-button,
       .download-button,
       .contact-button {
         display: inline-block;
@@ -130,11 +103,28 @@
         transition: background-image 0.3s, transform 0.3s;
       }
 
-      .view-button:hover,
       .download-button:hover,
       .contact-button:hover {
         background-image: linear-gradient(to right, #3498db, #6dd5fa);
         transform: scale(1.05);
+      }
+
+      /* Intro Section */
+      .intro-section {
+        max-width: 1200px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 30px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .intro-section img {
+        width: 70%;
+        margin: 20px 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       }
 
       /* Features Section */
@@ -253,6 +243,18 @@
         background-image: linear-gradient(to right, #3498db, #6dd5fa);
         transform: scale(1.05);
       }
+      .input-container {
+        margin: 20px 0;
+      }
+
+      .input-container input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        font-size: 1em;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
 
       /* Media Queries */
       @media (max-width: 800px) {
@@ -282,19 +284,29 @@
   </head>
 
   <body>
-    <!-- Intro Section Centered -->
+    <!-- Intro Section -->
     <div class="intro-section">
-      <h1>MC1822</h1>
-      <!-- <img src="/imageS/" alt="Dewatering Machine" /> -->
+      <div class="header">
+        <h1>MC1822</h1>
+      </div>
+
+      <!-- <img src="/images/MC8020.jpeg" alt="Dewatering Machine" /> -->
     </div>
 
     <!-- Main Content Section -->
     <div class="container">
       <img
-        src="/images/CSM-2344.jpeg"
+        src="/images/MC1822.jpeg"
         alt="Project Image"
         class="project-image"
       />
+
+      <!-- "Shaft : Twin Shaft Grinder Mechanism 
+      Cutter Material : ‘4140’
+      High carbon alloy steel
+     Shredding Material: Organic Waste    Motor Capacity:- 2HP/3 Phase
+     Shredding Capacity: 250-300kg/hr
+     Gearbox Size:- 75 (Worm Gearbox)"			 -->
 
       <div class="description">
         <p><strong>Specifications:</strong></p>
@@ -304,14 +316,13 @@
             <strong>Cutter Material :</strong> ‘4140’. High carbon alloy steel
           </li>
           <li><strong>Shredding Material:</strong> Organic Waste.</li>
-          <li><strong>Motor Capacity:</strong> 5HP/3 phase</li>
+          <li><strong>Motor Capacity:</strong> 5HP/3. phase</li>
           <li>
             <strong>Shredding Capacity:</strong> 400-500kg/hr (As per garbage)
           </li>
           <li><strong>Gearbox Size:</strong> 110(worm gearbox)</li>
         </ul>
 
-        <!-- Input Fields -->
         <div class="input-container">
           <input type="text" id="name" placeholder="Your Name" required />
           <input type="email" id="email" placeholder="Your Email" required />
@@ -322,10 +333,8 @@
             required
           />
         </div>
-
-        <!-- View PDF Button -->
         <a
-          href="/PDF/Crus Shed Machine - Copy.pdf"
+          href="/PDF/Bio Mining Shredder Machine.pdf"
           class="view-button"
           target="_blank"
           >View PDF</a
@@ -342,16 +351,17 @@
     <div class="features-section">
       <h2>Key Features</h2>
       <ul class="features-list">
-        <li><strong>Shredding Material:</strong> Aluminum Can</li>
         <li>
-          <strong>Shredding Machine Type:</strong> Double Shaft Suitable for 7.5
-          hp motor *2 nos. Helical gearbox * 2 nos.
+          <strong>Efficiency:</strong> Highly efficient water removal from
+          materials.
         </li>
-        <li><strong>Shredding Capacity:</strong> 700 to 900 can/hr</li>
-        <li><strong>Input Size:</strong> 450mm* 395mm</li>
-        <li><strong>Cutter:</strong> SS304</li>
-        <li><strong>Cutter Thickness:</strong> 15mm * 5 teeth</li>
-        <li><strong>Cutter Diameter:</strong> 200mm</li>
+        <li>
+          <strong>Durability:</strong> Built with stainless steel for longevity.
+        </li>
+        <li>
+          <strong>Automation:</strong> Fully automated operation with low manual
+          intervention.
+        </li>
       </ul>
     </div>
 
@@ -362,7 +372,9 @@
         "The dewatering machine has drastically reduced our waste disposal
         costs, and it's very easy to maintain."
       </p>
-      <p><strong>- A satisfied customer</strong></p>
+      <p>
+        <strong>- A satisfied customer</strong>
+      </p>
     </div>
 
     <!-- Contact Section -->
@@ -385,7 +397,6 @@
         </ul>
       </nav>
     </footer>
-
     <script>
       function handleDownload() {
         // Collect input values
@@ -411,8 +422,8 @@
 
         // Trigger PDF download
         const downloadLink = document.createElement("a");
-        downloadLink.href = "/PDF/Crus Shed Machine - Copy.pdf"; // Ensure this is the correct path to your PDF
-        downloadLink.download = "CSM2344.pdf";
+        downloadLink.href = "/PDF/MC1020 (1).pdf"; // Ensure this is the correct path to your PDF
+        downloadLink.download = "MC2108.pdf";
         downloadLink.click();
       }
     </script>

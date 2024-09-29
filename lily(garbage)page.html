@@ -243,6 +243,18 @@
         background-image: linear-gradient(to right, #3498db, #6dd5fa);
         transform: scale(1.05);
       }
+      .input-container {
+        margin: 20px 0;
+      }
+
+      .input-container input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        font-size: 1em;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
 
       /* Media Queries */
       @media (max-width: 800px) {
@@ -306,14 +318,27 @@
           <li><strong>Color:</strong>Golden</li>
           <li><strong>Switch:</strong>Air Switch (Easy Installation)</li>
         </ul>
-        <a href="/PDF/Bio Mining Shredder Machine.pdf class=" view-button" target="_blank"
-        >View PDF</a
-      >
+        <div class="input-container">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Your Phone Number"
+            required
+          />
+        </div>
+        <a
+          href="/PDF/Bio Mining Shredder Machine.pdf"
+          class="view-button"
+          target="_blank"
+          >View PDF</a
+        >
 
-      <!-- Download Button -->
-      <button class="download-button" onclick="handleDownload()">
-        Download PDF
-      </button>
+        <!-- Download Button -->
+        <button class="download-button" onclick="handleDownload()">
+          Download PDF
+        </button>
       </div>
     </div>
 
@@ -386,7 +411,7 @@
         const whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(
           message
         )}`;
- 
+
         // Open WhatsApp with the data
         window.open(whatsappLink, "_blank");
 

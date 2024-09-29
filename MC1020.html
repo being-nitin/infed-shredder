@@ -243,6 +243,18 @@
         background-image: linear-gradient(to right, #3498db, #6dd5fa);
         transform: scale(1.05);
       }
+      .input-container {
+        margin: 20px 0;
+      }
+
+      .input-container input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        font-size: 1em;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
 
       /* Media Queries */
       @media (max-width: 800px) {
@@ -278,7 +290,7 @@
         <h1>MC1020</h1>
       </div>
 
-      <!-- <img src="/images/MC1020.jpeg" alt="Dewatering Machine" /> -->
+      <!-- <img src="/images/MC8020.jpeg" alt="Dewatering Machine" /> -->
     </div>
 
     <!-- Main Content Section -->
@@ -289,11 +301,12 @@
         class="project-image"
       />
 
-      <!-- "Shaft : Twin Shaft Grinder Mechanism Cutter Material : ‘4140’ High carbon
-      alloy steel 
-      Shredding Material: Organic Waste Motor Capacity:- 1.5HP/3
-      Phase Shredding Capacity: 100-150kg/hr (As per Garbage) Gearbox Size:- 63
-      (Worm Gearbox)" -->
+      <!-- "Shaft : Twin Shaft Grinder Mechanism 
+      Cutter Material : ‘4140’
+      High carbon alloy steel
+     Shredding Material: Organic Waste    Motor Capacity:- 2HP/3 Phase
+     Shredding Capacity: 250-300kg/hr
+     Gearbox Size:- 75 (Worm Gearbox)"			 -->
 
       <div class="description">
         <p><strong>Specifications:</strong></p>
@@ -302,9 +315,24 @@
           <li>
             <strong>Cutter Material :</strong> ‘4140’. High carbon alloy steel
           </li>
-          <li><strong>Shredding Material:</strong> Organic Waste Motor.</li>
-          <li><strong>Capacity:</strong> 1.5HP/3.</li>
+          <li><strong>Shredding Material:</strong> Organic Waste.</li>
+          <li><strong>Motor Capacity:</strong> 5HP/3. phase</li>
+          <li>
+            <strong>Shredding Capacity:</strong> 400-500kg/hr (As per garbage)
+          </li>
+          <li><strong>Gearbox Size:</strong> 110(worm gearbox)</li>
         </ul>
+
+        <div class="input-container">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Your Phone Number"
+            required
+          />
+        </div>
         <a
           href="/PDF/Bio Mining Shredder Machine.pdf"
           class="view-button"
@@ -318,26 +346,6 @@
         </button>
       </div>
     </div>
-    <!-- 
-    <script>
-      function downloadMultiplePDFs() {
-        // Create two anchor elements to download both PDFs
-        const link1 = document.createElement("a");
-        const link2 = document.createElement("a");
-
-        // Set the URLs of the PDFs
-        link1.href = "/PDF/MC100-Series1.pdf";
-        link2.href = "/PDF/MC100-Series2.pdf";
-
-        // Set the download attribute to automatically download the files
-        link1.download = "MC100-Series1.pdf";
-        link2.download = "MC100-Series2.pdf";
-
-        // Programmatically click the links to trigger the downloads
-        link1.click();
-        link2.click();
-      }
-    </script> -->
 
     <!-- Features Section -->
     <div class="features-section">
@@ -388,37 +396,36 @@
           <li><a href="/contact">Contact Us</a></li>
         </ul>
       </nav>
-
-      <script>
-        function handleDownload() {
-          // Collect input values
-          const name = document.getElementById("name").value;
-          const email = document.getElementById("email").value;
-          const phone = document.getElementById("phone").value;
-
-          // Ensure all fields are filled
-          if (!name || !email || !phone) {
-            alert("Please fill in all fields.");
-            return;
-          }
-
-          // WhatsApp Integration
-          const whatsappNumber = "+919519613735"; // Replace with actual WhatsApp number
-          const message = `Name: ${name}, Email: ${email}, Phone: ${phone}`;
-          const whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(
-            message
-          )}`;
-
-          // Open WhatsApp with the data
-          window.open(whatsappLink, "_blank");
-
-          // Trigger PDF download
-          const downloadLink = document.createElement("a");
-          downloadLink.href = "/PDF/MC1020 (1).pdf"; // Ensure this is the correct path to your PDF
-          downloadLink.download = "MC2108.pdf";
-          downloadLink.click();
-        }
-      </script>
     </footer>
+    <script>
+      function handleDownload() {
+        // Collect input values
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+
+        // Ensure all fields are filled
+        if (!name || !email || !phone) {
+          alert("Please fill in all fields.");
+          return;
+        }
+
+        // WhatsApp Integration
+        const whatsappNumber = "+919519613735"; // Replace with actual WhatsApp number
+        const message = `Name: ${name}, Email: ${email}, Phone: ${phone}`;
+        const whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(
+          message
+        )}`;
+
+        // Open WhatsApp with the data
+        window.open(whatsappLink, "_blank");
+
+        // Trigger PDF download
+        const downloadLink = document.createElement("a");
+        downloadLink.href = "/PDF/MC1020 (1).pdf"; // Ensure this is the correct path to your PDF
+        downloadLink.download = "MC2108.pdf";
+        downloadLink.click();
+      }
+    </script>
   </body>
 </html>

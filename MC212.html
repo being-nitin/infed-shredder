@@ -243,6 +243,18 @@
         background-image: linear-gradient(to right, #3498db, #6dd5fa);
         transform: scale(1.05);
       }
+      .input-container {
+        margin: 20px 0;
+      }
+
+      .input-container input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        font-size: 1em;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
 
       /* Media Queries */
       @media (max-width: 800px) {
@@ -278,7 +290,7 @@
         <h1>MC212</h1>
       </div>
 
-      <!-- <img src="/images/MC212.jpeg" alt="Dewatering Machine" /> -->
+      <!-- <img src="/images/MC8020.jpeg" alt="Dewatering Machine" /> -->
     </div>
 
     <!-- Main Content Section -->
@@ -300,8 +312,23 @@
             <strong>Cutter Material :</strong> ‘4140’. High carbon alloy steel
           </li>
           <li><strong>Shredding Material:</strong> Organic Waste.</li>
-          <li><strong>Motor Capacity:</strong> 3HP/3. phase</li>
+          <li><strong>Motor Capacity:</strong> 5HP/3. phase</li>
+          <li>
+            <strong>Shredding Capacity:</strong> 400-500kg/hr (As per garbage)
+          </li>
+          <li><strong>Gearbox Size:</strong> 110(worm gearbox)</li>
         </ul>
+
+        <div class="input-container">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Your Phone Number"
+            required
+          />
+        </div>
         <a
           href="/PDF/Bio Mining Shredder Machine.pdf"
           class="view-button"

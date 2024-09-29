@@ -243,7 +243,18 @@
         background-image: linear-gradient(to right, #3498db, #6dd5fa);
         transform: scale(1.05);
       }
+      .input-container {
+        margin: 20px 0;
+      }
 
+      .input-container input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        font-size: 1em;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
       /* Media Queries */
       @media (max-width: 800px) {
         .container {
@@ -278,7 +289,7 @@
         <h1>GSM75</h1>
       </div>
 
-      <!-- <img src="/images/GSM75.jpeg" alt="Dewatering Machine" /> -->
+      <!-- <img src="/images/GSM50.jpeg" alt="Dewatering Machine" /> -->
     </div>
 
     <!-- Main Content Section -->
@@ -295,11 +306,22 @@
       <div class="description">
         <p><strong>Specifications:</strong></p>
         <ul>
-          <li><strong>Motor:</strong>7.5HP/3 Phase Electric Motor</li>
+          <li><strong>Motor:</strong>5HP/3 Phase Electric Motor</li>
           <li><strong>Material :</strong>Mild Steel</li>
-          <li><strong>Capacity:</strong> 350 Kg/hr (As per Garbage)</li>
+          <li><strong>Capacity:</strong> 200 Kg/hr (As per Garbage)</li>
           <li><strong>Shredding Material:</strong>Dry And Wet Leaves</li>
         </ul>
+
+        <div class="input-container">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Your Phone Number"
+            required
+          />
+        </div>
         <a
           href="/PDF/Bio Mining Shredder Machine.pdf"
           class="view-button"
